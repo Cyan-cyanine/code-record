@@ -1,0 +1,23 @@
+{
+    "tasks": [
+        {
+            "label": "Build C++",
+            "command": "clang++",
+            "args": [
+                "-g",
+                "-Wall",
+                "${file}",
+                "-o",
+                "${workspaceFolder}/build/${fileBasenameNoExtension}",
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+        }
+    ],
+    "version": "2.0.0"
+}

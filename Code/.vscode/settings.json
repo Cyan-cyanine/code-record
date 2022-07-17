@@ -1,0 +1,33 @@
+{
+    "files.associations": {
+        "fcntl.h": "c",
+        "string.h": "c",
+        "unistd.h": "c",
+        "stdbool.h": "c",
+        "stdlib.h": "c",
+        "iostream": "cpp",
+        "ostream": "cpp",
+        "atomic": "c",
+        "*.tcc": "c",
+        "coms.h": "c",
+        "send_receive.h": "c",
+        "limits": "c",
+        "numeric": "c",
+        "streambuf": "c",
+        "tuple": "c",
+        "type_traits": "c",
+        "stdio.h": "c",
+        "pthread.h": "c",
+        "errno.h": "c",
+        "xmlmemory.h": "c",
+        "parser.h": "c",
+        "locale_t.h": "c",
+        "cstdio": "cpp",
+        "string": "cpp",
+        "exception": "cpp",
+        "random": "cpp",
+        "istream": "cpp",
+        "new": "cpp",
+        "string_view": "cpp"
+    }
+}

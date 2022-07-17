@@ -1,0 +1,13 @@
+{
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "C/C++ gdb",
+            "program": "${workspaceFolder}/build/${fileBasenameNoExtension}}",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "Build C++"
+        }
+    ]
+}
