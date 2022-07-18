@@ -35,6 +35,7 @@
 ### 不一样的合并操作
 `git rebase 分支1`将HEAD当前指向的提交变基到分支1
 `git cherry-pick c1 c2 c3`将c1、c2、c3、这些提交合并到HEAD所在位置
+`git rebase -i HEAD~4`UI提供重排界面，从HEAD的前4位置重新排列提交
 
 ### 远端仓库
 `git remote -v`查看本地仓库和哪些远程仓库有联系
