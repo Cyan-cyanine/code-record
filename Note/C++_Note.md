@@ -253,5 +253,3 @@ istream中的类提供了一些面向行的累成员函数：getline()和get()
     - 不能使用sizeof来确定动态数组的字节数
   - 使用动态数组
     - psome[0]、psome[1]、psome[2]...调用数组各个元素
-
-
