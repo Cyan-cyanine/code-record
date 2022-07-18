@@ -25,11 +25,16 @@
 
 ### 分支
 `git branch 分支名称`添加分支
-`git checkout 分支`分支切换
+`git checkout 分支or提交`切换HEAD指针指向
+`git branch -f 分支1 分支2or提交orHEAD`将分支1挪到分支2或提交或HEAD的所在位置
 `git merge demo`将demo分支合并到当前所处的分支上
 `git branch -d 分支名称`删除分支(若分支还未合并到主分支需要用`-D`代替`-d`进行删除)
 `git checkout -b 分支名称`创建分支并切换到新建的分支上
 `git brach -M demo`创建一个demo分支并将该分支设为master分支
+
+### 不一样的合并操作
+`git rebase 分支1`将HEAD当前指向的提交变基到分支1
+`git cherry-pick c1 c2 c3`将c1、c2、c3、这些提交合并到HEAD所在位置
 
 ### 远端仓库
 `git remote -v`查看本地仓库和哪些远程仓库有联系
