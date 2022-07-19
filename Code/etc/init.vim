@@ -298,3 +298,6 @@ set shiftwidth=4            "每一级缩进长度
 set expandtab               "用空格符表示缩进
 set autoindent              "创建新行时，使用与上一行同样的缩进
 set smartindent
+set pastetoggle=<F2>             "设置粘贴切换
+":h option-list 可以查看所有的vim选项
+
