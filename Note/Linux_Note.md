@@ -1,5 +1,72 @@
 # Linux教程
-[toc]
+- [Linux教程](#linux教程)
+    - [Linux用户信息存储的文件](#linux用户信息存储的文件)
+    - [配置Linux编程环境](#配置linux编程环境)
+    - [shell命令](#shell命令)
+    - [GCC编译器的四大过程](#gcc编译器的四大过程)
+    - [内存管理](#内存管理)
+    - [结构体和共用体占用字节的计算](#结构体和共用体占用字节的计算)
+    - [函数](#函数)
+    - [结构体](#结构体)
+    - [动态库与静态库](#动态库与静态库)
+    - [文件IO](#文件io)
+        - [系统IO和文件IO的区别](#系统io和文件io的区别)
+        - [系统IO](#系统io)
+        - [标准IO](#标准io)
+            - [fd和fp的关系](#fd和fp的关系)
+        - [硬链接和软连接](#硬链接和软连接)
+            - [软连接命令](#软连接命令)
+            - [硬链接命令](#硬链接命令)
+            - [硬连接函数](#硬连接函数)
+            - [隐式回收](#隐式回收)
+        - [目录IO](#目录io)
+            - [目录IO函数索引<a id="dirFunIndex"></a>](#目录io函数索引)
+            - [目录IO代码索引<a id="dirCodeIndex"></a>](#目录io代码索引)
+            - [目录的rwx权限](#目录的rwx权限)
+        - [获取/修改文件信息](#获取修改文件信息)
+            - [stat()和lstat()](#stat和lstat)
+            - [truncate()截断](#truncate截断)
+            - [access()获取文件存储权限](#access获取文件存储权限)
+            - [chmod()修改文件访问权限](#chmod修改文件访问权限)
+    - [开发板操作](#开发板操作)
+        - [tftp传输文件](#tftp传输文件)
+        - [显示bmp图片](#显示bmp图片)
+        - [获取屏幕坐标](#获取屏幕坐标)
+    - [gdb调试](#gdb调试)
+    - [Linux系统编程](#linux系统编程)
+        - [进程管理](#进程管理)
+            - [进程管理相关指令](#进程管理相关指令)
+            - [进程常用函数](#进程常用函数)
+            - [创建多进程模板](#创建多进程模板)
+            - [父子进程在fork后有哪些相同，哪些不同？](#父子进程在fork后有哪些相同哪些不同)
+            - [wait | waitpid](#wait--waitpid)
+            - [wait函数的宏](#wait函数的宏)
+        - [管道](#管道)
+            - [匿名管道(支持多写一读)](#匿名管道支持多写一读)
+            - [有名管道](#有名管道)
+        - [Signal](#signal)
+            - [The way of sendding the signal](#the-way-of-sendding-the-signal)
+            - [kill and signal](#kill-and-signal)
+            - [Signal set](#signal-set)
+            - [Sigqueue and sigaction](#sigqueue-and-sigaction)
+        - [IPC](#ipc)
+            - [Shared memory](#shared-memory)
+            - [Message queue](#message-queue)
+            - [Semaphore array(system V)](#semaphore-arraysystem-v)
+            - [POSIX有名信号量](#posix有名信号量)
+        - [Thread](#thread)
+            - [POSIX无名信号量](#posix无名信号量)
+            - [互斥锁与读写锁](#互斥锁与读写锁)
+            - [取消例程函数](#取消例程函数)
+            - [条件变量](#条件变量)
+            - [线程池](#线程池)
+    - [Linux网络编程](#linux网络编程)
+        - [基础概念](#基础概念)
+        - [TCP通讯时序](#tcp通讯时序)
+        - [c/s模型和b/s模型](#cs模型和bs模型)
+        - [socket套接字](#socket套接字)
+            - [网络字节序](#网络字节序)
+            - [socket函数](#socket函数)
 ## Linux用户信息存储的文件
 - etc/passwd(7列):用户基本信息文件
 
@@ -172,7 +239,7 @@
 
 - 变参函数：例如：`int printf(const char *format , ...);`
 
-  ![](./pic/%E5%8F%98%E5%8F%82%E5%87%BD%E6%95%B0.png)
+  ![](./asset/%E5%8F%98%E5%8F%82%E5%87%BD%E6%95%B0.png)
 
   - 自主设计变参函数，实现参数值相加
 
@@ -627,15 +694,15 @@ int main(int argc, char **argv)
 
 ### 目录IO
 
-| directory                |
-| ------------------------ |
-| ![](./pic/directory.png) |
+| directory                  |
+| -------------------------- |
+| ![](./asset/directory.png) |
 
 - 查看目录文件权限:`ls -ld xxx`
 
-| ls -ld               |
-| -------------------- |
-| ![](./pic/ls-ld.png) |
+| ls -ld                 |
+| ---------------------- |
+| ![](./asset/ls-ld.png) |
 
 
 #### 目录IO函数索引<a id="dirFunIndex"></a>
@@ -717,14 +784,14 @@ struct dirent
   - buf:用于存放路径的数组，size:buf的大小
 - <a href="#dirFunIndex">return index</a>
 
-| ls详解            |
-| ----------------- |
-| ![](./pic/ls.png) |
+| ls详解              |
+| ------------------- |
+| ![](./asset/ls.png) |
 
 <a id="customized_ls"></a>
 | 自定义ls命令 | [customized_ls.c](../../Code/share/DIR_IO/customized_ls.c) |
 | ------------ | :--------------------------------------------------------: |
-| 运行结果     |            ![](./pic/customized_ls_result.png)             |
+| 运行结果     |           ![](./asset/customized_ls_result.png)            |
 | 返回索引     |             <a href="#dirCodeIndex">return</a>             |
 
 **fcntl**<a id="fcntl"></a>
@@ -742,9 +809,9 @@ fcntl (fd,F_SETFL, flgs); //将flag的属性给到文件描述符fd
 - <a href="#dirFunIndex">return index</a>
 #### 目录的rwx权限
 
-| 目录的rwx权限          |
-| ---------------------- |
-| ![](./pic/dir_rwx.png) |
+| 目录的rwx权限            |
+| ------------------------ |
+| ![](./asset/dir_rwx.png) |
 
 ### 获取/修改文件信息
 #### stat()和lstat()
@@ -924,30 +991,41 @@ void displayBmp(char *picName, int setx, int sety)
 
 ## gdb调试
 `gcc main.c -o main` >> `gdb main`
-| 命令                 | 简写 | 作用                                   |
-| -------------------- | ---- | -------------------------------------- |
-| help                 | h    | 列出命令类                             |
-| help class           |      | 查看某一类型具体命令                   |
-| list                 | l    | 查看代码，可跟行号和函数名             |
-| quit                 | q    | 退出gdb调试                            |
-| run                  | r    | 全速运行程序                           |
-| start                |      | 单步执行，运行程序，停在第一行执行语句 |
-| next                 | n    | 全速运行程序                           |
-| backtrace            | bt   | 查看函数调用的栈帧和层级关系           |
-| frame                | f    | 切换函数的栈帧                         |
-| info                 | i    | 查看gdb内部局部变量的数值              |
-| finish               |      | 结束当前函数                           |
-| set                  |      | 设置变量的值，set var n = 100          |
-| set args a b c       |      | 设置外部传参，set args a b c           |
-| run argv[1] ...      |      | 传入外部参数并运行                     |
-| print                | p    | 打印变量和地址                         |
-| break                | b    | 设置断点，可根据行号和函数名           |
-| delete               | d    | 删除断点                               |
-| display              |      | 设置观察变量                           |
-| undisplay            |      | 取消观察变量                           |
-| continue             |      | 运行到下一个断点                       |
-| stop only if arg = n |      | 条件断点(如果arg = n)                  |
-| ptype arg            |      | 查看变量类型                           |
+| 命令                     | 简写 | 作用                                   |
+| ------------------------ | ---- | -------------------------------------- |
+| run                      | r    | 全速运行程序                           |
+| quit                     | q    | 退出gdb调试                            |
+| list                     | l    | 查看代码，可跟行号和函数名             |
+| break                    | b    | 设置断点，可根据行号和函数名设置       |
+| info b                   | -    | 查看当前断点                           |
+| next                     | n    | 向下执行一行语句                       |
+| print                    | p    | 打印变量和地址                         |
+| step                     | -    | 进入函数                               |
+| shell ....               | -    | 在gdb中调用shell                       |
+| set logging on           | -    | 记录gdb的调试记录到gdb.txt             |
+| watch *地址              | -    | 设置观察点                             |
+| info watchpoints         | -    | 查看已设置的观察点                     |
+| 小提示                   | -    | `ulimit -c unlimited` 解除unix限制     |
+| gdb <exeFile> <coreFile> | -    | 调试段core文件，直接定位到段错误的位置 |
+| gdb -p <pid>             | -    | 调试一个正在运行的进程                 |
+
+| help                     | h    | 列出命令类                             |
+| help class               |      | 查看某一类型具体命令                   |
+| start                    |      | 单步执行，运行程序，停在第一行执行语句 |
+| backtrace                | bt   | 查看函数调用的栈帧和层级关系           |
+| frame                    | f    | 切换函数的栈帧                         |
+| info                     | i    | 查看gdb内部局部变量的数值              |
+| finish                   |      | 结束当前函数                           |
+| set                      |      | 设置变量的值，set var n = 100          |
+| set args a b c           |      | 设置外部传参，set args a b c           |
+| run argv[1] ...          |      | 传入外部参数并运行                     |
+| break                    | b    | 设置断点，可根据行号和函数名           |
+| delete                   | d    | 删除断点                               |
+| display                  |      | 设置观察变量                           |
+| undisplay                |      | 取消观察变量                           |
+| continue                 |      | 运行到下一个断点                       |
+| stop only if arg = n     |      | 条件断点(如果arg = n)                  |
+| ptype arg                |      | 查看变量类型                           |
 
 ## Linux系统编程
 ### 进程管理
@@ -985,9 +1063,9 @@ void displayBmp(char *picName, int setx, int sety)
 
 #### wait函数的宏
 
-| wait宏                     |
-| -------------------------- |
-| ![](./pic/wait_define.png) |
+| wait宏                       |
+| ---------------------------- |
+| ![](./asset/wait_define.png) |
 
 ### 管道
 - 实现原理：借助环形队列机制，使用内核缓冲区实现。
@@ -1183,12 +1261,12 @@ int main(int argc, char **argv)
 
 ### Signal
 
-| signal                     |
-| -------------------------- |
-| ![](./pic/signal_list.png) |
+| signal                       |
+| ---------------------------- |
+| ![](./asset/signal_list.png) |
 
 #### The way of sendding the signal
-- Kernel sends the signal and process it.
+- Kernel sends the signal and process.
 - The usage of kill
   - `kill -s SIGINT 1234`,1234:process id
   - `kill -9 1234`
@@ -1218,7 +1296,7 @@ int sigaddset(sigset_t *set, int signum);
 int sigdelset(sigset_t *set, int signum);
 
 #### Sigqueue and sigaction
-![](./pic/sigqueue_outline.png)
+![](./asset/sigqueue_outline.png)
 ```c
 //sigqueue 发送信号端
 #include <stdio.h>
@@ -1288,15 +1366,15 @@ TIPS:
   
 - get shared memory id
 
-| shmget                |
-| --------------------- |
-| ![](./pic/shmget.png) |
+| shmget                  |
+| ----------------------- |
+| ![](./asset/shmget.png) |
 
 - attach and detach shared memory
 
-| shmat                |
-| -------------------- |
-| ![](./pic/shmat.png) |
+| shmat                  |
+| ---------------------- |
+| ![](./asset/shmat.png) |
 
 - delete shared memory
   - via command
@@ -1306,9 +1384,9 @@ TIPS:
   
   - via function
 
-| shmctl                |
-| --------------------- |
-| ![](./pic/shmctl.png) |
+| shmctl                  |
+| ----------------------- |
+| ![](./asset/shmctl.png) |
 
 - Example
 ```c
@@ -1366,21 +1444,21 @@ int main(void)
 #### Message queue
 - get message queue id
 
-| msgget                |
-| --------------------- |
-| ![](./pic/msgget.png) |
+| msgget                  |
+| ----------------------- |
+| ![](./asset/msgget.png) |
 
 - send and receive message
 
-| msgget                |
-| --------------------- |
-| ![](./pic/msgsnd.png) |
+| msgget                  |
+| ----------------------- |
+| ![](./asset/msgsnd.png) |
 
 - delete the message queue
 
-| msgctl                |
-| --------------------- |
-| ![](./pic/msgctl.png) |
+| msgctl                  |
+| ----------------------- |
+| ![](./asset/msgctl.png) |
 
 - Example
 ```c
@@ -1456,15 +1534,15 @@ int main(void)
 #### Semaphore array(system V)
 - get semaphore id
 
-| semget                |
-| --------------------- |
-| ![](./pic/semget.png) |
+| semget                  |
+| ----------------------- |
+| ![](./asset/semget.png) |
 
 - semaphore control
 
-| semctl                |
-| --------------------- |
-| ![](./pic/semctl.png) |
+| semctl                  |
+| ----------------------- |
+| ![](./asset/semctl.png) |
 - 若semctl的cmd值为SETVAL，则它的第四个参数应该为如下的联合体类型
 ```c
 union semun {
@@ -1476,9 +1554,9 @@ union semun {
 
 - semaphore option
 
-| semop                |
-| -------------------- |
-| ![](./pic/semop.png) |
+| semop                  |
+| ---------------------- |
+| ![](./asset/semop.png) |
 ```c
 struct sembuf
 {
@@ -1506,18 +1584,18 @@ make semsnd semrcv
   - 不同：系统V信号量存放在内核，具有多个信号量同时操作的原子性，POSIX有名信号量存放于`/dev/shm`中，只具有对单个信号量操作的原子性
 
 
-| sem_open                |
-| ----------------------- |
-| ![](./pic/sem_open.png) |
+| sem_open                  |
+| ------------------------- |
+| ![](./asset/sem_open.png) |
 
 
 | p/v option of posix sem |
 | ----------------------- |
-| ![](./pic/sem_pv.png)   |
+| ![](./asset/sem_pv.png) |
 
-| delete the posix sem      |
-| ------------------------- |
-| ![](./pic/sem_delete.png) |
+| delete the posix sem        |
+| --------------------------- |
+| ![](./asset/sem_delete.png) |
 
 - Example
 [p_sem.h](../../Code/share/ISP/p_sem.h) 
@@ -1526,28 +1604,28 @@ make semsnd semrcv
 
 ### Thread
 
-| pthread creat                |
-| ---------------------------- |
-| ![](./pic/pthread_creat.png) |
+| pthread creat                  |
+| ------------------------------ |
+| ![](./asset/pthread_creat.png) |
 
 
-| pthread exit                |
-| --------------------------- |
-| ![](./pic/pthread_exit.png) |
+| pthread exit                  |
+| ----------------------------- |
+| ![](./asset/pthread_exit.png) |
 
-| pthread join                |
-| --------------------------- |
-| ![](./pic/pthread_join.png) |
-
-
-| pthread attribute           |
-| --------------------------- |
-| ![](./pic/pthread_attr.png) |
+| pthread join                  |
+| ----------------------------- |
+| ![](./asset/pthread_join.png) |
 
 
-| pthread set detach state                   |
-| ------------------------------------------ |
-| ![](./pic/pthread_attr_setdetachstate.png) |
+| pthread attribute             |
+| ----------------------------- |
+| ![](./asset/pthread_attr.png) |
+
+
+| pthread set detach state                     |
+| -------------------------------------------- |
+| ![](./asset/pthread_attr_setdetachstate.png) |
 
 - Example
 
@@ -1563,17 +1641,17 @@ make semsnd semrcv
     - 2.在当前线程中设置`pthread_detach(pthread_self())`,`pthread_self()`可以获取当前线程的tid
 
 
-| pthread set inherit schedual                |
-| ------------------------------------------- |
-| ![](./pic/pthread_attr_setinheritsched.png) |
+| pthread set inherit schedual                  |
+| --------------------------------------------- |
+| ![](./asset/pthread_attr_setinheritsched.png) |
 
-| pthread set schedual policy                |
-| ------------------------------------------ |
-| ![](./pic/pthread_attr_setschedpolicy.png) |
+| pthread set schedual policy                  |
+| -------------------------------------------- |
+| ![](./asset/pthread_attr_setschedpolicy.png) |
 
 | pthread set schedual paramter(范围/参数/界限) |
 | --------------------------------------------- |
-| ![](./pic/pthread_attr_setschedparam.png)     |
+| ![](./asset/pthread_attr_setschedparam.png)   |
 
 ```c
 struct sched_param
@@ -1592,7 +1670,7 @@ struct sched_param
 
 | posix anonymous semaphore |
 | ------------------------- |
-| ![](./pic/sem_init.png)   |
+| ![](./asset/sem_init.png) |
 
 - Example
 
@@ -1613,26 +1691,26 @@ struct sched_param
 
 | 互斥锁   | [pthread_mutex_lock.c](../../Code/share/thread/pthread_mutex_lock.c) |
 | -------- | -------------------------------------------------------------------- |
-| 运行结果 | ![](./pic/mutex_result.png)                                          |
+| 运行结果 | ![](./asset/mutex_result.png)                                        |
 | 功能     | 互斥锁会使一个线程的工作执行完成后再完成另一个线程的工作             |
        
 
 | 读写锁   | [pthread_rwlock.c](../../Code/share/thread/pthread_rwlock.c) |
 | -------- | ------------------------------------------------------------ |
-| 运行结果 | ![](./pic/rwlock_result.png)                                 |
+| 运行结果 | ![](./asset/rwlock_result.png)                               |
 | 功能     | 写锁的结果和互斥锁一样，读锁结果如上                         |
 
-| pthread_cancel                |
-| ----------------------------- |
-| ![](./pic/pthread_cancel.png) |
+| pthread_cancel                  |
+| ------------------------------- |
+| ![](./asset/pthread_cancel.png) |
 
-| pthread_cancelstate                |
-| ---------------------------------- |
-| ![](./pic/pthread_cancelstate.png) |
+| pthread_cancelstate                  |
+| ------------------------------------ |
+| ![](./asset/pthread_cancelstate.png) |
 
-| cancel的取消点                     |
-| ---------------------------------- |
-| ![](./pic/pthread_cancelpoint.png) |
+| cancel的取消点                       |
+| ------------------------------------ |
+| ![](./asset/pthread_cancelpoint.png) |
 
 #### 取消例程函数
 
@@ -1640,50 +1718,50 @@ struct sched_param
 
 | 取消函数 | [ptread_cancel.c](../../Code/share/thread/pthread_cancel.c) |
 | -------- | ----------------------------------------------------------- |
-| 运行结果 | ![](./pic/cancel_result.png)                                |
+| 运行结果 | ![](./asset/cancel_result.png)                              |
 | 功能     | 取消一个线程的例程函数                                      |
 
-| pthread_cleanup                |
-| ------------------------------ |
-| ![](./pic/pthread_cleanup.png) |
+| pthread_cleanup                  |
+| -------------------------------- |
+| ![](./asset/pthread_cleanup.png) |
 
 
 - Example
 
 | 例程的压栈和弹栈 | [ptread_cleanup.c](../../Code/share/thread/pthread_cleanup.c) |
 | ---------------- | ------------------------------------------------------------- |
-| 运行结果         | ![](./pic/cleanup_result.png)                                 |
+| 运行结果         | ![](./asset/cleanup_result.png)                               |
 | 功能             | 解决取消函数导致的死锁问题                                    |
 
-| pthread_cond_init                |
-| -------------------------------- |
-| ![](./pic/pthread_cond_init.png) |
+| pthread_cond_init                  |
+| ---------------------------------- |
+| ![](./asset/pthread_cond_init.png) |
 
-| pthread_cond_wait                |
-| -------------------------------- |
-| ![](./pic/pthread_cond_wait.png) |
+| pthread_cond_wait                  |
+| ---------------------------------- |
+| ![](./asset/pthread_cond_wait.png) |
 
-| pthread_cond_broadcast                |
-| ------------------------------------- |
-| ![](./pic/pthread_cond_broadcast.png) |
+| pthread_cond_broadcast                  |
+| --------------------------------------- |
+| ![](./asset/pthread_cond_broadcast.png) |
 
 #### 条件变量
 - Example
 
-| 条件变量 | [pthread_condition.c](../../Code/share/thread/pthread_condition.c) |
-| -------- | ------------------------------------------------------------------ |
-| 运行结果 | ![](./pic/cond_result.png)                                         |
-| 功能     | 条件锁的应用                                                       |
+| 条件变量 | [pthread_condition.c](../Code/03_SystemPrograming/07_thread/pthread_condition.c) |
+| -------- | -------------------------------------------------------------------------------- |
+| 运行结果 | ![](./asset/cond_result.png)                                                     |
+| 功能     | 条件锁的应用                                                                     |
 
 #### 线程池
 
-| thread_pool                |
-| -------------------------- |
-| ![](./pic/thread_pool.png) |
+| thread_pool                  |
+| ---------------------------- |
+| ![](./asset/thread_pool.png) |
 
-| 线程池 | [thread_pool.c](../../Code/share/thread/thread_pool.c) |
-| ------ | ------------------------------------------------------ |
-| -      |                                                        |
+| 线程池 | [thread_pool.c](thread_pool.c) |
+| ------ | ------------------------------ |
+| -      |                                |
 
 ## Linux网络编程
 ### 基础概念
@@ -1703,9 +1781,9 @@ ip地址+端口号：可以在网络环境中，唯一标识一个进程。
   - 6个标志位。
   - 16位窗口大小。2^16=65536
 ### TCP通讯时序
-| TCP通讯时序                |
-| -------------------------- |
-| ![](./pic/tcp_connect.png) |
+| TCP通讯时序                  |
+| ---------------------------- |
+| ![](./asset/tcp_connect.png) |
   - 三次握手(建立连接)
     1. 客户端发送一个带SYN标志的TCP报文到服务器。这是三次握手过程中的段1。
     2. 服务器端回应客户端，是三次握手中的第2个报文段，同时带ACK标志和SYN标志。它表示对刚才客户端SYN的回应；同时又发送SYN给客户端，询问客户端是否准备好进行数据通讯。
@@ -1755,13 +1833,13 @@ socket的本质是内核提供的两个缓冲区
 
 #### socket函数
 
-| socket                |
-| --------------------- |
-| ![](./pic/socket.png) |
+| socket                  |
+| ----------------------- |
+| ![](./asset/socket.png) |
 
-| bind                |
-| ------------------- |
-| ![](./pic/bind.png) |
+| bind                  |
+| --------------------- |
+| ![](./asset/bind.png) |
 
 ```c
 struct sockaddr_in
@@ -1783,9 +1861,9 @@ struct in_addr
     uint32_t s_addr; /* address in network byte order */
 };
 ```
-| struct_sockaddr                |
-| ------------------------------ |
-| ![](./pic/struct_sockaddr.png) |
+| struct_sockaddr                  |
+| -------------------------------- |
+| ![](./asset/struct_sockaddr.png) |
 
 | __listen__        |         头文件          |              函数原型               | 功能         |
 | :---------------- | :---------------------: | :---------------------------------: | :----------- |
@@ -1794,9 +1872,9 @@ struct in_addr
 | sockfd            |   套接字的文件描述符    |                  -                  |
 | backlog           |  同时连接的最大连接数   |              最大值128              |
 
-| socketCommunication                |
-| ---------------------------------- |
-| ![](./pic/socketCommunication.png) |
+| socketCommunication                  |
+| ------------------------------------ |
+| ![](./asset/socketCommunication.png) |
 
 | __accept__                           |                  头文件                  |                                               函数原型                                                | 功能                 |
 | :----------------------------------- | :--------------------------------------: | :---------------------------------------------------------------------------------------------------: | :------------------- |

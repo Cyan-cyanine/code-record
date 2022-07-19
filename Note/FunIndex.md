@@ -1,6 +1,7 @@
 <a id="top"></a>
 # **函数速查集**
 - [**函数速查集**](#函数速查集)
+- [C基础](#c基础)
 - [1. C数据结构](#1-c数据结构)
 - [2. C系统编程](#2-c系统编程)
     - [2.1. 系统IO](#21-系统io)
@@ -17,14 +18,23 @@
     - [2.7. 线程](#27-线程)
 - [3. C网络编程](#3-c网络编程)
 
+<a id="C_base"></a>
+# C基础
+| <a href="#top">[返回目录]</a> |                   功能描述                   | 代码示例                                      |
+| :---------------------------- | :------------------------------------------: | --------------------------------------------- |
+| man pwo [add lib m]           | 输入两个16进制数，打印他们二进制位不同的个数 | [printDiffBin.c](../Code/01_C/printDiffBin.c) |
+| -                             |                      d                       | d                                             |
+| -                             |                      d                       | -                                             |
+| -                             |                      d                       | -                                             |
+
 <a id="C_data_struct"></a>
 # 1. C数据结构
-| <a href="#top">[返回目录]</a> | 跳转  |    功能描述    | 代码示例                                                    |
-| :---------------------------- | :---: | :------------: | ----------------------------------------------------------- |
-| -                             | 单链表  | 单链表的操作 | [单链表](../Code/02_DateStruct/list.c) |
-| -                             |   链队   |       链式队列操作        | [链队](..Code/../../Code/02_DateStruct/link_queue.c)                                                           |
-| -                             |   d   |       d        | -                                                           |
-| -                             |   d   |       d        | -                                                           |
+| <a href="#top">[返回目录]</a> |  跳转  |   功能描述   | 代码示例                                             |
+| :---------------------------- | :----: | :----------: | ---------------------------------------------------- |
+| -                             | 单链表 | 单链表的操作 | [单链表](../Code/02_DateStruct/list.c)               |
+| -                             |  链队  | 链式队列操作 | [链队](..Code/../../Code/02_DateStruct/link_queue.c) |
+| -                             |   d    |      d       | -                                                    |
+| -                             |   d    |      d       | -                                                    |
 
 <a id="C_programing"></a>
 # 2. C系统编程
@@ -66,7 +76,7 @@
 | man 2 fcntl                   |    <a href="#fcntl">fcntl</a>    | 文件控制工具集(ioctl改良版) |   [获取/设置属性,实现dup](../Code/03_SystemPrograming/03_file_option/fcntl.c)    |
 | man 2 stat                    |     <a href="#stat">stat</a>     |        获取文件状态         | [获取文件信息，判断文件类型](../Code/03_SystemPrograming/03_file_option/stat.c)  |
 | man 2 truncate                | <a href="#truncate">truncate</a> |  将一个文件截断为指定长度   |                                        -                                         |
-| man 2 access                  |   <a href="#access">access</a>   |      获取文件访问权限       |                                        [文件重命名](../Code/03_SystemPrograming/03_file_option/rename.c)                                         |
+| man 2 access                  |   <a href="#access">access</a>   |      获取文件访问权限       |        [文件重命名](../Code/03_SystemPrograming/03_file_option/rename.c)         |
 | man 2 chmod                   |    <a href="#chmod">chmod</a>    |        修改文件权限         |                                        -                                         |
 | man 3 xxx                     |    <a href="#fd_fp">fd&fp</a>    |        fd转fp/fp转fd        | [文件描述符和文件指针的关系](../Code/03_SystemPrograming/03_file_option/fd_fp.c) |
 
