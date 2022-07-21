@@ -1,0 +1,6 @@
+mianWindow的内容:
+
+menubar(only)	//菜单栏唯一
+
+statusbar(only)	//状态栏唯一
+toolBar(customed)	//工具栏可多个
