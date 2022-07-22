@@ -169,6 +169,8 @@
 - set laststatus=2    "在窗口底部显示一个永久状态栏,文件名+行列号
 - set autochdir       "自动维护编辑的历史记录
 
+
+
 ### vim/nvim插件推荐
 #### coc.nvim，超好用的自动补全插件
 
@@ -187,7 +189,47 @@
 
   - 运行命令`:checkhealth`，看到coc: health栏下有3个OK代表coc已正确安装。
 
+
+
+#### ranger
+
+```
+[ranger操作]
+shift + s终端同步当前路径
+yp复制当前文件的路径
+yn复制文件名
+yy复制文件
+pp粘贴文件
+po覆盖
+dd剪切/取消任务传输
+dD删除
+w任务管理器
+v全选文件
+V行选文件
+space自定义选中文件
+zh显示隐藏文件
+```
+
+**添加自定义设置的环境变量**
+
+```
+终端执行:ranger --copy-config=all
+要想完全使用自定义ranger设置，需要终端下执行export RANGER_LOAD_DEFAULT_RC=FALSE配置到环境变量
+fish配置环境变量的方法:
+在~/.config/fish/config.fish里加入 set -g -x RANGER_LOAD_DEFAULT_RC FALSE
+```
+
+**配置ranger的ico**
+
+```shell
+//克隆到本地
+git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
+```
+
+
+
 #### MarkdownPreview
+
 ```vim
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
@@ -213,7 +255,7 @@ autocmd Filetype markdown inoremap ,3 ###<Space><Enter><++><Esc>kA  "三级
 autocmd Filetype markdown inoremap ,4 ####<Space><Enter><++><Esc>kA "四级
 autocmd Filetype markdown inoremap ,l --------<Enter>
 ```
-### tagbar
+#### tagbar
 ```
 " -------- general ----------
 " <CR>: 回车跳到定义位置
@@ -240,7 +282,7 @@ autocmd Filetype markdown inoremap ,l --------<Enter>
 原文链接：https://blog.csdn.net/yangqing99801/article/details/50729849k
 ```
 
-### 文字图形化软件(figlet)
+#### 文字图形化软件(figlet)
   - 安装:`sudo pacman -S figlet`
   - vim下的使用方法:`:r !figlet my vimrc`
     - `:r`：vim下可以使用该指令获取终端下的输出
@@ -248,6 +290,16 @@ autocmd Filetype markdown inoremap ,l --------<Enter>
     - 这串命令相当于在vim中运行了终端命令figlet my vimrc，将终端的输出结果写入到当前vim打开的文件里
     - ![](pic/Myvimrc.png)
 - vim for VScode按键绑定文件路径：`C:\Users\Administrator\AppData\Roaming\Code\User\keybindings.json`
+
+## 字体设置
+
+**查看系统已安装的字体**
+
+`fc-list`
+
+**修改系统默认语言**
+
+`nvim /etc/sysconfig/i18n`
 
 ## 开启远程连接ssh服务
 ## ArchWSL配置ssh公钥认证
