@@ -16,11 +16,15 @@ let mapleader="\<space>" "指定leader = space
 call plug#begin()
 Plug 'easymotion/vim-easymotion'    "easymotion
 Plug 'scrooloose/nerdtree'          "nerdtree
+Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-surround'           "vim-surround
 Plug 'neoclide/coc.nvim',{'branch':'release'}   "coc.nvim
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}     "vim-multi-cursor
 Plug 'jiangmiao/auto-pairs'         "自动括号补全
 Plug 'rhysd/vim-clang-format'       "c代码格式化
+"fuzzy finder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 "markdown
 Plug 'vimwiki/vimwiki'              "markdown笔记管理
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
@@ -34,13 +38,14 @@ call plug#end()
 "                |_|    
 map <C-z> <nop>
 map <C-f> <nop>
+noremap <C-f> :FZF ~<CR>
 noremap rf :r !figlet 
 noremap <M-k> K
 noremap <silent> <C-e> :NERDTreeToggle<CR>
 noremap <M-F> :ClangFormat<CR>
 noremap <C-l> gt
 noremap <C-h> gT
-noremap <C-\> :source init.vim<CR>
+noremap <C-\> :source %<CR>
 
 "normal
 nnoremap <C-s> :w<CR>
@@ -125,7 +130,7 @@ let g:mkdp_refresh_slow = 0
 let g:mkdp_command_for_global = 0
 let g:mkdp_open_to_the_world = 0
 let g:mkdp_open_ip = ''
-let g:mkdp_browser = 'chromium'
+let g:mkdp_browser = 'C:\Program Files\Google\Chrome\Application\chrome.exe'
 let g:mkdp_echo_preview_url = 0
 let g:mkdp_browserfunc = ''
 let g:mkdp_preview_options = {
@@ -267,6 +272,29 @@ filetype plugin indent on
 "主题设置
 "autocmd vimenter * ++nested colorscheme gruvbox
 
+" _____ __________ 
+"|  ___|__  /  ___|
+"| |_    / /| |_   
+"|  _|  / /_|  _|  
+"|_|   /____|_|    
+"                  
+"let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'relative': v:true } }  "窗口中部显示
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'relative': v:true, 'yoffset': 1.0 } }   "窗口底部显示
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
 "          _   
 " ___  ___| |_ 
 "/ __|/ _ \ __|
@@ -289,6 +317,10 @@ set encoding=utf-8          "设置字符集为utf-8
 set laststatus=2            "在窗口底部显示一个永久状态栏，文件名+行列号
 set autochdir               "自动维护编辑的历史记录
 set cursorline              "行光标
+"hi CursorLine   cterm=NONE ctermbg=darkgray ctermfg=NONE guibg=NONE guifg=NONE
+hi CursorLine   cterm=NONE ctermbg=darkgray
+hi Pmenu ctermfg=NONE ctermbg=240 cterm=NONE guifg=dark guibg=darkgrey gui=NONE 
+hi PmenuSel ctermfg=NONE ctermbg=31 cterm=NONE guifg=dark guibg=#FFB6C1 gui=NONE
 set scrolloff=5             "使光标距离窗口上下至少保留若干行，不会贴边
 "缩进
 set listchars=tab:>-,trail:-   "显示tab键
@@ -298,6 +330,5 @@ set shiftwidth=4            "每一级缩进长度
 set expandtab               "用空格符表示缩进
 set autoindent              "创建新行时，使用与上一行同样的缩进
 set smartindent
-set pastetoggle=<F2>             "设置粘贴切换
-":h option-list 可以查看所有的vim选项
-
+set guifont=Fira\ Code\ Nerd\ Font\ 25
+let g:airline_powerline_fonts = 1
