@@ -2,7 +2,7 @@
     "tasks": [
         {
             "label": "Build C++",
-            "command": "clang++",
+            "command": "gcc",
             "args": [
                 "-g",
                 "-Wall",
