@@ -14,6 +14,9 @@ let mapleader="\<space>" "指定leader = space
 "|_|            |___/ 
 "
 call plug#begin()
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+
 Plug 'easymotion/vim-easymotion'    "easymotion
 Plug 'scrooloose/nerdtree'          "nerdtree
 Plug 'ryanoasis/vim-devicons'
@@ -30,6 +33,10 @@ Plug 'vimwiki/vimwiki'              "markdown笔记管理
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle' }  
 call plug#end()
+
+lua << END
+require('lualine').setup()
+END
 
 " _ __ ___   __ _ _ __  
 "| '_ ` _ \ / _` | '_ \ 
@@ -321,6 +328,8 @@ set cursorline              "行光标
 hi CursorLine   cterm=NONE ctermbg=darkgray
 hi Pmenu ctermfg=NONE ctermbg=240 cterm=NONE guifg=dark guibg=darkgrey gui=NONE 
 hi PmenuSel ctermfg=NONE ctermbg=31 cterm=NONE guifg=dark guibg=#FFB6C1 gui=NONE
+hi TabLine term=NONE ctermbg=darkgrey
+hi TabLineSel term=bold cterm=bold ctermbg=black
 set scrolloff=5             "使光标距离窗口上下至少保留若干行，不会贴边
 "缩进
 set listchars=tab:>-,trail:-   "显示tab键
