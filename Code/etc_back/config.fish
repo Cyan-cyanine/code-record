@@ -1,0 +1,11 @@
+alias ra='ranger'
+alias vim='nvim'
+alias c='clear'
+alias ga='git add'
+alias gsta='git status'
+alias glog='git reflog'
+alias gcm='git commit'
+alias gremo='git remote'
+set -g -x RANGER_LOAD_DEFAULT_RC FALSE
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+export FZF_COMPLETION_TRIGGER='\\'

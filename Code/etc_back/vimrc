@@ -1,0 +1,46 @@
+map <C-z> <nop>
+map <C-f> <nop>
+noremap <M-k> K
+noremap <C-l> gt
+noremap <C-h> gT
+nnoremap <C-s> :w<CR>
+
+nnoremap J 4j
+nnoremap K 4k
+nnoremap L $
+nnoremap H ^
+nnoremap yie ggyG
+nnoremap die ggdG
+
+inoremap jk <Esc>
+
+vnoremap J 4j
+vnoremap K 4k
+vnoremap L $h
+vnoremap H ^h
+
+"set list                   "显示行尾$符
+syntax on                   "关键字高亮
+set nocompatible            "版本兼容设置
+set relativenumber          "设置相对行号
+set nu                      "设置行号
+set showcmd                 "显示命令，如3dd
+set wildmenu                "显示命令行提示
+set noignorecase            "查找时忽略区分大小写
+"set smartcase               "查找时智能忽略大小写
+set nohlsearch              "查找不会高亮显示
+set wrap                    "超出终端显示范围时，跳转到下一行
+set mouse=a                 "显示鼠标指针
+set encoding=utf-8          "设置字符集为utf-8
+set laststatus=2            "在窗口底部显示一个永久状态栏，文件名+行列号
+set autochdir               "自动维护编辑的历史记录
+set cursorline              "行光标
+set scrolloff=5             "使光标距离窗口上下至少保留若干行，不会贴边
+"缩进
+set listchars=tab:>-,trail:-   "显示tab键
+set tabstop=4               "一个tab相当于几个空格
+set softtabstop=4           "按退格键时退回的缩进长度
+set shiftwidth=4            "每一级缩进长度
+set expandtab               "用空格符表示缩进
+set autoindent              "创建新行时，使用与上一行同样的缩进
+set smartindent
