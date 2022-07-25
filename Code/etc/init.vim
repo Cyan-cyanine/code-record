@@ -13,19 +13,28 @@ let mapleader="\<space>" "指定leader = space
 "| .__/|_|\__,_|\__, |
 "|_|            |___/ 
 "
-call plug#begin()
-Plug 'nvim-lualine/lualine.nvim'
+call plug#begin() 
+Plug 'dominikduda/vim_current_word'
+"block comment
+Plug 'joom/vim-commentary'
+"lualine
+Plug 'nvim-lualine/lualine.nvim' 
 Plug 'kyazdani42/nvim-web-devicons'
+"colorscheme
+Plug 'nvim-treesitter/nvim-treesitter',{ 'do' : ':TSUpdate' }
+Plug 'sainnhe/sonokai'
 
-Plug 'easymotion/vim-easymotion'    "easymotion
-Plug 'scrooloose/nerdtree'          "nerdtree
-Plug 'ryanoasis/vim-devicons'
-Plug 'tpope/vim-surround'           "vim-surround
+"Plug 'lilydjwg/colorizer' "显示颜色
+Plug 'majutsushi/tagbar' "tagbar
+Plug 'easymotion/vim-easymotion' "easymotion
+Plug 'scrooloose/nerdtree' "nerdtree
+Plug 'ryanoasis/vim-devicons' 
+Plug 'tpope/vim-surround' "vim-surround
 Plug 'neoclide/coc.nvim',{'branch':'release'}   "coc.nvim
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}     "vim-multi-cursor
 Plug 'jiangmiao/auto-pairs'         "自动括号补全
 Plug 'rhysd/vim-clang-format'       "c代码格式化
-"fuzzy finder
+"fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 "markdown
@@ -34,9 +43,6 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle' }  
 call plug#end()
 
-lua << END
-require('lualine').setup()
-END
 
 " _ __ ___   __ _ _ __  
 "| '_ ` _ \ / _` | '_ \ 
@@ -45,8 +51,8 @@ END
 "                |_|    
 map <C-z> <nop>
 map <C-f> <nop>
-noremap <C-f> :FZF ~<CR>
-noremap rf :r !figlet 
+noremap <M-e> :FZF ~<CR>
+noremap fig :r !figlet 
 noremap <M-k> K
 noremap <silent> <C-e> :NERDTreeToggle<CR>
 noremap <M-F> :ClangFormat<CR>
@@ -189,7 +195,7 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 "| (_| (_) | (__ \ V /| | | | | | |
 " \___\___/ \___(_)_/ |_|_| |_| |_|
 "                                  
-"let g:coc_global_extensions = ['coc-clangd', 'coc-json']
+let g:coc_global_extensions = ['coc-clangd', 'coc-json', 'coc-vimlsp']
 autocmd CursorHold * silent call CocActionAsync('highlight') "标记与光标所在单词相同的词语
 set hidden                  "允许vim进行未保存时跳转至其他文件
 set updatetime=100          "提高vim的运行速度
@@ -197,11 +203,6 @@ set shortmess+=c            "使补全列表更加精简
 "查找上一个或下一个错误
 nmap <silent> <Leader>[ <Plug>(coc-diagnostic-prev)
 nmap <silent> <Leader>] <Plug>(coc-diagnostic-next)
-"跳转到函数定义、类型定义、声明等等
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references) 
 
 "使左边的行号柱子更窄，信息更简洁精炼
 "if has("nvim-0.5.0") || has("patch-8.1.1564")
@@ -277,7 +278,47 @@ filetype plugin on
 filetype plugin indent on
 
 "主题设置
-"autocmd vimenter * ++nested colorscheme gruvbox
+if has('termguicolors')
+    set termguicolors
+endif
+
+let g:sonokai_disable_italic_comment='1'    "注释斜体，1关，0开
+let g:sonokai_style = 'atlantis'            "主题风格
+let g:sonokai_spell_foreground='colored'        "拼写检查颜色
+let g:sonokai_menu_selection_background='red'   "补全窗口选中选项时的颜色
+let g:sonokai_diagnostic_text_highlight=1
+let g:sonokai_diagnostic_line_highlight=1
+let g:sonokai_better_performance = 1
+let g:sonokai_diagnostic_virtual_text='colored'
+let g:sonokai_current_word='grey background'
+let g:sonokai_transparent_background='2'    "透明背景，1关，2开
+"vim
+"光标下的单词高亮
+"hi cocHighlightText ctermfg=white ctermbg=darkblue
+colorscheme sonokai
+"vim_current_word
+let g:vim_current_word#enabled = 1
+let g:vim_current_word#highlight_delay = 300    "光标下单词高亮延迟
+hi CurrentWord ctermbg=53 guifg=NONE guibg=#255895
+hi CurrentWordTwins ctermbg=53 guifg=NONE guibg=#255895
+"hi CurrentWord ctermbg=53 guifg=NONE guibg=#d71e47
+"hi CurrentWordTwins ctermbg=53 guifg=NONE guibg=#d71e47
+autocmd BufAdd NERD_tree_*,your_buffer_name.rb,*.js :let b:vim_current_word_disabled_in_this_buffer = 1 "防止在多个缓冲区运行
+
+"lualine
+lua << END
+require('lualine').setup {
+options = {
+    section_separators = { left = '', right = '' },
+    component_separators = { left = '', right = '' },
+    disabled_filetypes = {
+        statusline = {},
+        winbar = {},
+        }
+
+    }
+}
+END
 
 " _____ __________ 
 "|  ___|__  /  ___|
@@ -286,21 +327,34 @@ filetype plugin indent on
 "|_|   /____|_|    
 "                  
 "let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'relative': v:true } }  "窗口中部显示
-let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'relative': v:true, 'yoffset': 1.0 } }   "窗口底部显示
-let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'border':  ['fg', 'Ignore'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
+let g:fzf_layout = {'window' : {'width' : 0.9, 'height' : 0.6, 'relative' : v:true, 'yoffset' : 1.0}}   "窗口底部显示
+
+let g:fzf_colors ={
+  \ 'fg' : [ 'fg', 'Normal' ],
+  \ 'bg' : [ 'bg', 'Normal' ],
+  \ 'hl' : [ 'fg', 'Comment' ],
+  \ 'fg+' : [ 'fg', 'CursorLine', 'CursorColumn', 'Normal' ],
+  \ 'bg+' : [ 'bg', 'CursorLine', 'CursorColumn' ],
+  \ 'hl+' : [ 'fg', 'Statement' ],
+  \ 'info' : [ 'fg', 'PreProc' ],
+  \ 'border' : [ 'fg', 'Ignore' ],
+  \ 'prompt' : [ 'fg', 'Conditional' ],
+  \ 'pointer' : [ 'fg', 'Exception' ],
+  \ 'marker' : [ 'fg', 'Keyword' ],
+  \ 'spinner' : [ 'fg', 'Label' ],
+  \ 'header' : [ 'fg', 'Comment' ] }
+
+" _              _                
+"| |_ __ _  __ _| |__   __ _ _ __ 
+"| __/ _` |/ _` | '_ \ / _` | '__|
+"| || (_| | (_| | |_) | (_| | |   
+" \__\__,_|\__, |_.__/ \__,_|_|   
+"          |___/                  
+map E <nop>
+map C <nop>
+nnoremap <silent> E :TagbarToggle[fjc]<CR>
+let g:tagbar_width = 40
+
 
 "          _   
 " ___  ___| |_ 
@@ -311,12 +365,12 @@ let g:fzf_colors =
 "set list                   "显示行尾$符
 syntax on                   "关键字高亮
 set nocompatible            "版本兼容设置
-set relativenumber          "设置相对行号
+"set relativenumber          "设置相对行号
 set nu                      "设置行号
 set showcmd                 "显示命令，如3dd
 set wildmenu                "显示命令行提示
 set noignorecase            "查找时忽略区分大小写
-"set smartcase               "查找时智能忽略大小写
+set smartcase               "查找时智能忽略大小写
 set nohlsearch              "查找不会高亮显示
 set wrap                    "超出终端显示范围时，跳转到下一行
 set mouse=a                 "显示鼠标指针
@@ -325,11 +379,11 @@ set laststatus=2            "在窗口底部显示一个永久状态栏，文件
 set autochdir               "自动维护编辑的历史记录
 set cursorline              "行光标
 "hi CursorLine   cterm=NONE ctermbg=darkgray ctermfg=NONE guibg=NONE guifg=NONE
-hi CursorLine   cterm=NONE ctermbg=darkgray
-hi Pmenu ctermfg=NONE ctermbg=240 cterm=NONE guifg=dark guibg=darkgrey gui=NONE 
-hi PmenuSel ctermfg=NONE ctermbg=31 cterm=NONE guifg=dark guibg=#FFB6C1 gui=NONE
-hi TabLine term=NONE ctermbg=darkgrey
-hi TabLineSel term=bold cterm=bold ctermbg=black
+"hi CursorLine   cterm=NONE ctermbg=darkgray
+"hi Pmenu ctermfg=white ctermbg=darkgray cterm=NONE guifg=dark guibg=darkgrey gui=NONE 
+"hi PmenuSel ctermfg=NONE ctermbg=31 cterm=NONE guifg=dark guibg=#FFB6C1 gui=NONE
+"hi Function cterm=NONE ctermfg=darkred
+"hi visual term=reverse cterm=bold ctermfg=NONE ctermbg=darkblue
 set scrolloff=5             "使光标距离窗口上下至少保留若干行，不会贴边
 "缩进
 set listchars=tab:>-,trail:-   "显示tab键
@@ -338,6 +392,8 @@ set softtabstop=4           "按退格键时退回的缩进长度
 set shiftwidth=4            "每一级缩进长度
 set expandtab               "用空格符表示缩进
 set autoindent              "创建新行时，使用与上一行同样的缩进
+set termguicolors
 set smartindent
 set guifont=Fira\ Code\ Nerd\ Font\ 25
 let g:airline_powerline_fonts = 1
+"set hlsearch

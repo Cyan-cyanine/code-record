@@ -418,6 +418,7 @@ int initSvr(void)
 
   
   printf(IMHELP);
+  return 0;
 }
 
 

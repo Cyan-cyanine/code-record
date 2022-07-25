@@ -1,0 +1,235 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/carry/gitRep/Code/99_test/IpMsg-64位/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20210905.0/
+CAPACITY	coms.h	/^#define CAPACITY /;"	d
+CFLAGS	Makefile	/^CFLAGS = -g$/;"	m
+COMLEN	coms.h	/^#define COMLEN /;"	d
+COMMAND_H	coms.h	/^#define COMMAND_H$/;"	d
+FILENAME	coms.h	/^#define FILENAME /;"	d
+GET_MODE	ipmsg.h	/^#define GET_MODE(/;"	d
+GET_OPT	ipmsg.h	/^#define GET_OPT(/;"	d
+HL_1416	coms.h	/^#define HL_1416	/;"	d
+HL_FILESIZE	coms.h	/^#define HL_FILESIZE	/;"	d
+HL_FILETYPE	coms.h	/^#define HL_FILETYPE	/;"	d
+HL_HEADERSIZE	coms.h	/^#define HL_HEADERSIZE	/;"	d
+HOSTLIST_DELIMIT	ipmsg.h	/^#define HOSTLIST_DELIMIT	/;"	d
+HOSTLIST_DUMMY	ipmsg.h	/^#define HOSTLIST_DUMMY	/;"	d
+HSIZE	coms.h	/^#define HSIZE /;"	d
+HS_TOOLS	ipmsg.h	/^#define HS_TOOLS	/;"	d
+IMHELP	coms.h	/^#define IMHELP /;"	d
+IPMSG_ABSENCEOPT	ipmsg.h	/^#define IPMSG_ABSENCEOPT	/;"	d
+IPMSG_ALLREVSORTOPT	ipmsg.h	/^#define IPMSG_ALLREVSORTOPT	/;"	d
+IPMSG_ANSENTRY	ipmsg.h	/^#define IPMSG_ANSENTRY	/;"	d
+IPMSG_ANSLIST	ipmsg.h	/^#define IPMSG_ANSLIST	/;"	d
+IPMSG_AUTORETOPT	ipmsg.h	/^#define IPMSG_AUTORETOPT	/;"	d
+IPMSG_BROADCASTOPT	ipmsg.h	/^#define IPMSG_BROADCASTOPT	/;"	d
+IPMSG_BROADCAST_TIMER	ipmsg.h	/^#define IPMSG_BROADCAST_TIMER	/;"	d
+IPMSG_BR_ABSENCE	ipmsg.h	/^#define IPMSG_BR_ABSENCE	/;"	d
+IPMSG_BR_ENTRY	ipmsg.h	/^#define IPMSG_BR_ENTRY	/;"	d
+IPMSG_BR_EXIT	ipmsg.h	/^#define IPMSG_BR_EXIT	/;"	d
+IPMSG_BR_ISGETLIST	ipmsg.h	/^#define IPMSG_BR_ISGETLIST	/;"	d
+IPMSG_BR_ISGETLIST2	ipmsg.h	/^#define IPMSG_BR_ISGETLIST2	/;"	d
+IPMSG_CLOCKTICK	ipmsg.h	/^#define IPMSG_CLOCKTICK	/;"	d
+IPMSG_DEFAULT_PORT	ipmsg.h	/^#define IPMSG_DEFAULT_PORT	/;"	d
+IPMSG_DELETE_TIMER	ipmsg.h	/^#define IPMSG_DELETE_TIMER	/;"	d
+IPMSG_DELMSG	ipmsg.h	/^#define IPMSG_DELMSG	/;"	d
+IPMSG_DIALUPOPT	ipmsg.h	/^#define IPMSG_DIALUPOPT	/;"	d
+IPMSG_DUMMY_TIMER	ipmsg.h	/^#define IPMSG_DUMMY_TIMER	/;"	d
+IPMSG_ENTRY_TIMER	ipmsg.h	/^#define IPMSG_ENTRY_TIMER	/;"	d
+IPMSG_FILEATTACHOPT	ipmsg.h	/^#define IPMSG_FILEATTACHOPT	/;"	d
+IPMSG_FILE_CREATETIME	ipmsg.h	/^#define IPMSG_FILE_CREATETIME	/;"	d
+IPMSG_FILE_DIR	ipmsg.h	/^#define IPMSG_FILE_DIR	/;"	d
+IPMSG_FILE_MTIME	ipmsg.h	/^#define IPMSG_FILE_MTIME	/;"	d
+IPMSG_FILE_REGULAR	ipmsg.h	/^#define IPMSG_FILE_REGULAR	/;"	d
+IPMSG_FILE_RETPARENT	ipmsg.h	/^#define IPMSG_FILE_RETPARENT	/;"	d
+IPMSG_FULLNAME	ipmsg.h	/^#define IPMSG_FULLNAME	/;"	d
+IPMSG_GETABSENCEINFO	ipmsg.h	/^#define IPMSG_GETABSENCEINFO	/;"	d
+IPMSG_GETDIRFILES	ipmsg.h	/^#define IPMSG_GETDIRFILES	/;"	d
+IPMSG_GETFILEDATA	ipmsg.h	/^#define IPMSG_GETFILEDATA	/;"	d
+IPMSG_GETINFO	ipmsg.h	/^#define IPMSG_GETINFO	/;"	d
+IPMSG_GETLIST	ipmsg.h	/^#define IPMSG_GETLIST	/;"	d
+IPMSG_GETLIST_FINISH	ipmsg.h	/^#define IPMSG_GETLIST_FINISH	/;"	d
+IPMSG_GROUPREVSORTOPT	ipmsg.h	/^#define IPMSG_GROUPREVSORTOPT	/;"	d
+IPMSG_H	ipmsg.h	/^#define IPMSG_H$/;"	d
+IPMSG_HOSTSORT	ipmsg.h	/^#define IPMSG_HOSTSORT	/;"	d
+IPMSG_ICMPSORTOPT	ipmsg.h	/^#define IPMSG_ICMPSORTOPT	/;"	d
+IPMSG_IPADDRSORT	ipmsg.h	/^#define IPMSG_IPADDRSORT	/;"	d
+IPMSG_LISTGETRETRY_TIMER	ipmsg.h	/^#define IPMSG_LISTGETRETRY_TIMER	/;"	d
+IPMSG_LISTGET_TIMER	ipmsg.h	/^#define IPMSG_LISTGET_TIMER	/;"	d
+IPMSG_MULTICASTOPT	ipmsg.h	/^#define IPMSG_MULTICASTOPT	/;"	d
+IPMSG_NAMESORT	ipmsg.h	/^#define IPMSG_NAMESORT	/;"	d
+IPMSG_NEWMUTIOPT	ipmsg.h	/^#define IPMSG_NEWMUTIOPT	/;"	d
+IPMSG_NICKNAME	ipmsg.h	/^#define IPMSG_NICKNAME	/;"	d
+IPMSG_NOADDLISTOPT	ipmsg.h	/^#define IPMSG_NOADDLISTOPT	/;"	d
+IPMSG_NOGROUPSORTOPT	ipmsg.h	/^#define IPMSG_NOGROUPSORTOPT	/;"	d
+IPMSG_NOKANJISORTOPT	ipmsg.h	/^#define IPMSG_NOKANJISORTOPT	/;"	d
+IPMSG_NOLOGOPT	ipmsg.h	/^#define IPMSG_NOLOGOPT	/;"	d
+IPMSG_NOOPERATION	ipmsg.h	/^#define IPMSG_NOOPERATION	/;"	d
+IPMSG_NOPOPUPOPT	ipmsg.h	/^#define IPMSG_NOPOPUPOPT	/;"	d
+IPMSG_OKGETLIST	ipmsg.h	/^#define IPMSG_OKGETLIST	/;"	d
+IPMSG_PASSWORDOPT	ipmsg.h	/^#define IPMSG_PASSWORDOPT	/;"	d
+IPMSG_READMSG	ipmsg.h	/^#define IPMSG_READMSG	/;"	d
+IPMSG_RECVMSG	ipmsg.h	/^#define IPMSG_RECVMSG	/;"	d
+IPMSG_RELEASEFILES	ipmsg.h	/^#define IPMSG_RELEASEFILES	/;"	d
+IPMSG_RETRYOPT	ipmsg.h	/^#define IPMSG_RETRYOPT	/;"	d
+IPMSG_RETRY_TIMES	ipmsg.h	/^#define	IPMSG_RETRY_TIMES	/;"	d
+IPMSG_REVERSEICON	ipmsg.h	/^#define IPMSG_REVERSEICON	/;"	d
+IPMSG_SECRETOPT	ipmsg.h	/^#define IPMSG_SECRETOPT	/;"	d
+IPMSG_SENDABSENCEINFO	ipmsg.h	/^#define IPMSG_SENDABSENCEINFO	/;"	d
+IPMSG_SENDCHECKOPT	ipmsg.h	/^#define IPMSG_SENDCHECKOPT	/;"	d
+IPMSG_SENDINFO	ipmsg.h	/^#define IPMSG_SENDINFO	/;"	d
+IPMSG_SENDMSG	ipmsg.h	/^#define IPMSG_SENDMSG	/;"	d
+IPMSG_SEND_TIMER	ipmsg.h	/^#define IPMSG_SEND_TIMER	/;"	d
+IPMSG_SERVEROPT	ipmsg.h	/^#define IPMSG_SERVEROPT	/;"	d
+IPMSG_SUBREVSORTOPT	ipmsg.h	/^#define IPMSG_SUBREVSORTOPT	/;"	d
+IPMSG_TIMERINTERVAL	ipmsg.h	/^#define IPMSG_TIMERINTERVAL	/;"	d
+IPMSG_VERSION	ipmsg.h	/^#define IPMSG_VERSION	/;"	d
+IP_MSG	ipmsg.h	/^#define IP_MSG	/;"	d
+MAILTO_STR	ipmsg.h	/^#define MAILTO_STR	/;"	d
+MAX_BUF	ipmsg.h	/^#define MAX_BUF	/;"	d
+MAX_LANGBUF	ipmsg.h	/^#define MAX_LANGBUF	/;"	d
+MAX_LISTBUF	ipmsg.h	/^#define MAX_LISTBUF	/;"	d
+MAX_NAMEBUF	ipmsg.h	/^#define MAX_NAMEBUF	/;"	d
+MAX_SOCKBUF	ipmsg.h	/^#define MAX_SOCKBUF	/;"	d
+MAX_UDPBUF	ipmsg.h	/^#define MAX_UDPBUF	/;"	d
+MSGLEN	coms.h	/^#define MSGLEN /;"	d
+MSGLIMIT	coms.h	/^#define MSGLIMIT /;"	d
+Mysnd	coms.h	/^typedef int (*Mysnd)(int, const char*, int, int);$/;"	t	typeref:typename:int (*)(int,const char *,int,int)
+NAMELEN	coms.h	/^#define NAMELEN /;"	d
+NO_NAME	ipmsg.h	/^#define NO_NAME	/;"	d
+RECFRG	coms.h	/^#define RECFRG /;"	d
+SEND_RECV_H	send_receive.h	/^#define SEND_RECV_H$/;"	d
+URL_STR	ipmsg.h	/^#define URL_STR	/;"	d
+USERS_H	users.h	/^#define USERS_H$/;"	d
+UTIL_H	utils.h	/^#define UTIL_H$/;"	d
+_ENCODE_H_	encode.h	/^#define _ENCODE_H_$/;"	d
+addColon	utils.c	/^void addColon(char* dest, int size) \/\/: ---> ::$/;"	f	typeref:typename:void
+additional	coms.h	/^  char         additional[MSGLEN];$/;"	m	struct:command	typeref:typename:char[]
+allHosts	coms.c	/^const char allHosts[] = "255.255.255.255";$/;"	v	typeref:typename:const char[]
+cancelled	coms.h	/^  int    cancelled;$/;"	m	struct:gsNode	typeref:typename:int
+ceaseSend	send_receive.c	/^int ceaseSend(void)$/;"	f	typeref:typename:int
+cgch	Makefile	/^cgch:$/;"	t
+clean	Makefile	/^clean:$/;"	t
+cleaner	main.c	/^void* cleaner(void *option)$/;"	f	typeref:typename:void *
+code_convert	encode.c	/^int code_convert(char *to_charset, char *from_charset,$/;"	f	typeref:typename:int
+comHead	coms.h	/^  command comHead;$/;"	m	struct:msgList	typeref:typename:command
+comTail	coms.h	/^  command *comTail;$/;"	m	struct:msgList	typeref:typename:command *
+command	coms.h	/^typedef struct command$/;"	s
+command	coms.h	/^}command;$/;"	t	typeref:struct:command
+commandNo	coms.h	/^  unsigned int commandNo;$/;"	m	struct:command	typeref:typename:unsigned int
+coms.o	Makefile	/^coms.o: coms.c ipmsg.h coms.h$/;"	t
+deCommand	coms.c	/^void deCommand(command *com) \/\/delete fileList$/;"	f	typeref:typename:void
+deGsNode	coms.c	/^void deGsNode(gsNode *gs) \/\/delete fileList & tragetDir$/;"	f	typeref:typename:void
+delColon	utils.c	/^void delColon(char* dest, int size) \/\/:: ---> :$/;"	f	typeref:typename:void
+delUser	users.c	/^int delUser(user *uList, command *peercom)$/;"	f	typeref:typename:int
+destroyUsers	users.c	/^void destroyUsers(user *uList)$/;"	f	typeref:typename:void
+destroyer	main.c	/^void destroyer()$/;"	f	typeref:typename:void
+encode.o	Makefile	/^encode.o: encode.c$/;"	t
+exit	users.h	/^  int    exit;$/;"	m	struct:user	typeref:typename:int
+fileList	coms.h	/^  filenode *   fileList;$/;"	m	struct:command	typeref:typename:filenode *
+fileList	coms.h	/^  filenode fileList;$/;"	m	struct:gsNode	typeref:typename:filenode
+fileName	coms.h	/^  char   fileName[FILENAME];$/;"	m	struct:filenode	typeref:typename:char[]
+fileNo	coms.h	/^  unsigned int    fileNo;$/;"	m	struct:filenode	typeref:typename:unsigned int
+fileSize	coms.h	/^  char   fileSize[NAMELEN];$/;"	m	struct:filenode	typeref:typename:char[]
+fileType	coms.h	/^  int    fileType;$/;"	m	struct:filenode	typeref:typename:int
+filenode	coms.h	/^struct filenode $/;"	s
+filenode	coms.h	/^typedef struct filenode filenode;$/;"	t	typeref:struct:filenode
+g2u	encode.c	/^int g2u(char *inbuf, int inlen, char *outbuf, int outlen)$/;"	f	typeref:typename:int
+getData	send_receive.c	/^void* getData(void* option)$/;"	f	typeref:typename:void *
+getDir	send_receive.c	/^int getDir(void *option, gsNode *gList)$/;"	f	typeref:typename:int
+getFHead	coms.c	/^gsNode sendFHead, getFHead; $/;"	v	typeref:typename:gsNode
+getFMutex	coms.c	/^pthread_mutex_t getFMutex=PTHREAD_MUTEX_INITIALIZER; $/;"	v	typeref:typename:pthread_mutex_t
+getFile	send_receive.c	/^int getFile(void* option, gsNode *gList)$/;"	f	typeref:typename:int
+getFileName	utils.c	/^int getFileName(char* dest, const char* fullpath, int size)\/\/get filename from fullpath$/;"	f	typeref:typename:int
+getFilelist	coms.c	/^filenode* getFilelist(const char* comFiles)$/;"	f	typeref:typename:filenode *
+getParentPath	utils.c	/^int getParentPath(char *dest, int size)$/;"	f	typeref:typename:int
+gsNode	coms.h	/^typedef struct gsNode$/;"	s
+gsNode	coms.h	/^} gsNode;$/;"	t	typeref:struct:gsNode
+host	users.h	/^  char   host[NAMELEN];$/;"	m	struct:user	typeref:typename:char[]
+inUse	users.h	/^  int    inUse;$/;"	m	struct:user	typeref:typename:int
+initCommand	coms.c	/^void initCommand(command *com, unsigned int flag)$/;"	f	typeref:typename:void
+initGsNode	coms.c	/^void initGsNode(gsNode *gs)$/;"	f	typeref:typename:void
+initSvr	main.c	/^int initSvr(void)$/;"	f	typeref:typename:int
+inputNo	utils.c	/^int inputNo(int min, int max, int def, char *prom)$/;"	f	typeref:typename:int
+insertUser	users.c	/^int insertUser(user *uList, user *target)$/;"	f	typeref:typename:int
+interacter	main.c	/^void* interacter(void* option)$/;"	f	typeref:typename:void *
+ipmsg	Makefile	/^ipmsg: $(objects)$/;"	t
+listGFiles	send_receive.c	/^int listGFiles(gsNode **list, gsNode *gs, int size)$/;"	f	typeref:typename:int
+listSFiles	send_receive.c	/^int listSFiles(gsNode **list, gsNode *gs, int size)$/;"	f	typeref:typename:int
+listUsers	users.c	/^int listUsers(user **pusers, user *uList, int size, int flag)$/;"	f	typeref:typename:int
+login	send_receive.c	/^int login(void)$/;"	f	typeref:typename:int
+logout	send_receive.c	/^int logout(void)$/;"	f	typeref:typename:int
+mList	coms.c	/^msgList mList;$/;"	v	typeref:typename:msgList
+main	main.c	/^int main (int argc, char *argv [])$/;"	f	typeref:typename:int
+main.o	Makefile	/^main.o: main.c coms.h users.h ipmsg.h send_receive.h$/;"	t
+module dejitter delta	ts.conf	/^module dejitter delta=100$/;"	k
+module pthres pmin	ts.conf	/^module pthres pmin=1$/;"	k
+module variance delta	ts.conf	/^module variance delta=30$/;"	k
+msgCreater	coms.c	/^int msgCreater(char* msg, command* com, size_t msgLen)$/;"	f	typeref:typename:int
+msgList	coms.h	/^typedef struct msgList$/;"	s
+msgList	coms.h	/^} msgList;$/;"	t	typeref:struct:msgList
+msgMutex	coms.c	/^pthread_mutex_t msgMutex=PTHREAD_MUTEX_INITIALIZER;  $/;"	v	typeref:typename:pthread_mutex_t
+msgParser	coms.c	/^int msgParser(char *msg, int size, command* com)\/\/, struct sockaddr_in *peer)$/;"	f	typeref:typename:int
+msgSock	coms.c	/^int msgSock; $/;"	v	typeref:typename:int
+mtime	coms.h	/^  char   mtime[NAMELEN];$/;"	m	struct:filenode	typeref:typename:char[]
+name	users.h	/^  char   name[NAMELEN];$/;"	m	struct:user	typeref:typename:char[]
+next	coms.h	/^  struct command *next;$/;"	m	struct:command	typeref:struct:command *
+next	coms.h	/^  struct filenode* next;$/;"	m	struct:filenode	typeref:struct:filenode *
+next	coms.h	/^  struct gsNode *next;$/;"	m	struct:gsNode	typeref:struct:gsNode *
+next	users.h	/^  struct user *next;$/;"	m	struct:user	typeref:struct:user *
+nickname	users.h	/^  char   nickname[NAMELEN];$/;"	m	struct:user	typeref:typename:char[]
+objects	Makefile	/^objects = main.o users.o utils.o send_receive.o coms.o encode.o$/;"	m
+otherAttrs	coms.h	/^  char   otherAttrs[2*NAMELEN];$/;"	m	struct:filenode	typeref:typename:char[]
+packetNo	coms.h	/^  unsigned int packetNo;$/;"	m	struct:command	typeref:typename:unsigned int
+packetNo	coms.h	/^  unsigned int packetNo;$/;"	m	struct:gsNode	typeref:typename:unsigned int
+parseHeader	send_receive.c	/^int parseHeader(filenode *pfn, char * recvs)$/;"	f	typeref:typename:int
+peer	coms.h	/^  struct sockaddr_in peer;$/;"	m	struct:command	typeref:struct:sockaddr_in
+peer	coms.h	/^  struct sockaddr_in peer;$/;"	m	struct:gsNode	typeref:struct:sockaddr_in
+peer	users.h	/^  struct sockaddr_in peer;$/;"	m	struct:user	typeref:struct:sockaddr_in
+processor	main.c	/^void* processor(void *option)$/;"	f	typeref:typename:void *
+pwd	coms.c	/^struct passwd* pwd; $/;"	v	typeref:struct:passwd *
+readDelimiter	utils.c	/^ssize_t readDelimiter(int fd, void *buf, ssize_t count, char ch)$/;"	f	typeref:typename:ssize_t
+readline	utils.c	/^ssize_t readline(int fd, void *buf, int size)$/;"	f	typeref:typename:ssize_t
+readn	utils.c	/^ssize_t readn(int fd, void *buf, size_t count)$/;"	f	typeref:typename:ssize_t
+receiver	main.c	/^void* receiver(void *option)$/;"	f	typeref:typename:void *
+recvFiles	send_receive.c	/^int recvFiles()$/;"	f	typeref:typename:int
+saySth	send_receive.c	/^int saySth(void)$/;"	f	typeref:typename:int
+selectFiles	send_receive.c	/^int selectFiles(void)$/;"	f	typeref:typename:int
+sendData	send_receive.c	/^void* sendData(void* option)$/;"	f	typeref:typename:void *
+sendDir	send_receive.c	/^int sendDir(int fSock, const char* fullpath, int fileSize, int fileType)$/;"	f	typeref:typename:int
+sendFHead	coms.c	/^gsNode sendFHead, getFHead; $/;"	v	typeref:typename:gsNode
+sendFMutex	coms.c	/^pthread_mutex_t sendFMutex=PTHREAD_MUTEX_INITIALIZER; $/;"	v	typeref:typename:pthread_mutex_t
+sendMsg	send_receive.c	/^void* sendMsg(command* com)$/;"	f	typeref:typename:void *
+send_receive.o	Makefile	/^send_receive.o: send_receive.c send_receive.h coms.h ipmsg.h users.h$/;"	t
+senderHost	coms.h	/^  char         senderHost[NAMELEN];$/;"	m	struct:command	typeref:typename:char[]
+senderName	coms.h	/^  char         senderName[NAMELEN];$/;"	m	struct:command	typeref:typename:char[]
+sysName	coms.c	/^struct utsname sysName;$/;"	v	typeref:struct:utsname
+targetDir	coms.h	/^  char  *targetDir;$/;"	m	struct:gsNode	typeref:typename:char *
+tcpSock	coms.c	/^int tcpSock;$/;"	v	typeref:typename:int
+tcpSock	coms.h	/^  int    tcpSock;$/;"	m	struct:filenode	typeref:typename:int
+tcpSock	coms.h	/^  int tcpSock;$/;"	m	struct:gsNode	typeref:typename:int
+transfStr	utils.c	/^void transfStr(char *dest, int flag)$/;"	f	typeref:typename:void
+transferring	coms.h	/^  int	 transferring;$/;"	m	struct:gsNode	typeref:typename:int
+traverseDir	send_receive.c	/^int traverseDir(int fSock, char* fullpath, Mysnd snd)$/;"	f	typeref:typename:int
+u2g	encode.c	/^int u2g(char *inbuf, size_t inlen, char *outbuf, size_t outlen)$/;"	f	typeref:typename:int
+unListUsers	users.c	/^int unListUsers(user **pusers, int num)$/;"	f	typeref:typename:int
+user	users.h	/^typedef struct user$/;"	s
+user	users.h	/^} user;$/;"	t	typeref:struct:user
+userList	users.c	/^user userList;$/;"	v	typeref:typename:user
+users.o	Makefile	/^users.o: users.c users.h coms.h$/;"	t
+usrMutex	coms.c	/^pthread_mutex_t usrMutex=PTHREAD_MUTEX_INITIALIZER; $/;"	v	typeref:typename:pthread_mutex_t
+utf8	coms.c	/^int utf8;$/;"	v	typeref:typename:int
+utils.o	Makefile	/^utils.o: utils.c coms.h$/;"	t
+version	coms.h	/^  unsigned int version;$/;"	m	struct:command	typeref:typename:unsigned int
+waitNonEmpty	coms.c	/^sem_t waitNonEmpty, waitNonFull; $/;"	v	typeref:typename:sem_t
+waitNonFull	coms.c	/^sem_t waitNonEmpty, waitNonFull; $/;"	v	typeref:typename:sem_t
+workDir	coms.c	/^char workDir[FILENAME];$/;"	v	typeref:typename:char[]
+writen	utils.c	/^ssize_t writen(int fd, const void *buf, size_t count)$/;"	f	typeref:typename:ssize_t
