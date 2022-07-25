@@ -51,12 +51,8 @@ call plug#end()
 map <C-z> <nop>
 map <C-f> <nop>
 noremap <M-e> :FZF ~<CR>
-<<<<<<< Updated upstream
 noremap fig :r !figlet 
-=======
 noremap <C-f> :Ag<CR>
-noremap rf :r !figlet 
->>>>>>> Stashed changes
 noremap <M-k> K
 noremap <silent> <C-e> :NERDTreeToggle<CR>
 noremap <M-F> :ClangFormat<CR>
@@ -209,11 +205,11 @@ nmap <silent> <Leader>[ <Plug>(coc-diagnostic-prev)
 nmap <silent> <Leader>] <Plug>(coc-diagnostic-next)
 
 "使左边的行号柱子更窄，信息更简洁精炼
-"if has("nvim-0.5.0") || has("patch-8.1.1564")
-"  set signcolumn=number
-"else
-"  set signcolumn=yes
-"endif
+if has("nvim-0.5.0") || has("patch-8.1.1564")
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
 
 "添加下面代码可以使coc.vim用tab键补全
 inoremap <silent><expr> <TAB>
@@ -234,7 +230,7 @@ else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
-"让TAB直接补全列表中的第一项
+"让回车来确定补全列表中的第一项
 inoremap <silent><expr> <CR> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
@@ -245,7 +241,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 "让alt+k显示当前光标所在处的对象帮助coc文档
-nnoremap <silent> <M-k> :call ShowDocumentation()<CR>
+nnoremap <silent><leader>h :call ShowDocumentation()<CR>
 
 function! ShowDocumentation()
   if CocAction('hasProvider', 'hover')
@@ -290,12 +286,12 @@ let g:sonokai_disable_italic_comment='1'    "注释斜体，1关，0开
 let g:sonokai_style = 'atlantis'            "主题风格
 let g:sonokai_spell_foreground='colored'        "拼写检查颜色
 let g:sonokai_menu_selection_background='red'   "补全窗口选中选项时的颜色
-let g:sonokai_diagnostic_text_highlight=1
-let g:sonokai_diagnostic_line_highlight=1
 let g:sonokai_better_performance = 1
-let g:sonokai_diagnostic_virtual_text='colored'
-let g:sonokai_current_word='grey background'
-let g:sonokai_transparent_background='2'    "透明背景，1关，2开
+let g:sonokai_current_word='bold'
+let g:sonokai_transparent_background='2'    "透明背景，0关，1,2开
+"let g:sonokai_diagnostic_text_highlight=1
+"let g:sonokai_diagnostic_line_highlight=1
+"let g:sonokai_diagnostic_virtual_text='colored'
 "vim
 "光标下的单词高亮
 "hi cocHighlightText ctermfg=white ctermbg=darkblue
@@ -303,11 +299,25 @@ colorscheme sonokai
 "vim_current_word
 let g:vim_current_word#enabled = 1
 let g:vim_current_word#highlight_delay = 300    "光标下单词高亮延迟
-hi CurrentWord ctermbg=53 guifg=NONE guibg=#255895
-hi CurrentWordTwins ctermbg=53 guifg=NONE guibg=#255895
-"hi CurrentWord ctermbg=53 guifg=NONE guibg=#d71e47
-"hi CurrentWordTwins ctermbg=53 guifg=NONE guibg=#d71e47
-autocmd BufAdd NERD_tree_*,your_buffer_name.rb,*.js :let b:vim_current_word_disabled_in_this_buffer = 1 "防止在多个缓冲区运行
+
+"------------------------[ 配色 ]------------------------
+"hi CurrentWord ctermbg=53 guifg=#d7000f guibg=#f0c2a2   "橙红撞色
+"hi CurrentWordTwins ctermbg=53 guifg=#d7000f guibg=#f0c2a2
+
+hi CurrentWord ctermbg=53 guifg=#faead3 guibg=#a27e7e   "酒红淡黄
+hi CurrentWordTwins ctermbg=53 guifg=#faead3 guibg=#a27e7e
+
+"hi CurrentWord ctermbg=53 guifg=#fac03d guibg=#697723   "黄绿撞色
+"hi CurrentWordTwins ctermbg=53 guifg=#fac03d guibg=#697723
+
+"hi CursorLine   cterm=NONE ctermbg=darkgray ctermfg=NONE guibg=NONE guifg=NONE
+"hi CursorLine   cterm=NONE ctermbg=darkgray
+"hi Pmenu ctermfg=white ctermbg=darkgray cterm=NONE guifg=dark guibg=darkgrey gui=NONE 
+"hi PmenuSel ctermfg=NONE ctermbg=31 cterm=NONE guifg=dark guibg=#FFB6C1 gui=NONE
+hi visual term=reverse cterm=bold ctermfg=NONE ctermbg=darkblue
+"--------------------------------------------------------
+
+autocmd BufAdd NERD_tree_*,yset termguicolorsour_buffer_name.rb,*.js :let b:vim_current_word_disabled_in_this_buffer = 1 "防止在多个缓冲区运行
 
 "lualine
 lua << END
@@ -323,6 +333,7 @@ options = {
     }
 }
 END
+
 
 " _____ __________ 
 "|  ___|__  /  ___|
@@ -382,19 +393,13 @@ set encoding=utf-8          "设置字符集为utf-8
 set laststatus=2            "在窗口底部显示一个永久状态栏，文件名+行列号
 set autochdir               "自动维护编辑的历史记录
 set cursorline              "行光标
-"hi CursorLine   cterm=NONE ctermbg=darkgray ctermfg=NONE guibg=NONE guifg=NONE
-"hi CursorLine   cterm=NONE ctermbg=darkgray
-"hi Pmenu ctermfg=white ctermbg=darkgray cterm=NONE guifg=dark guibg=darkgrey gui=NONE 
-"hi PmenuSel ctermfg=NONE ctermbg=31 cterm=NONE guifg=dark guibg=#FFB6C1 gui=NONE
-"hi Function cterm=NONE ctermfg=darkred
-"hi visual term=reverse cterm=bold ctermfg=NONE ctermbg=darkblue
 set scrolloff=5             "使光标距离窗口上下至少保留若干行，不会贴边
 "缩进
 set listchars=tab:>-,trail:-   "显示tab键
 set tabstop=4               "一个tab相当于几个空格
 set softtabstop=4           "按退格键时退回的缩进长度
 set shiftwidth=4            "每一级缩进长度
-set expandtab               "用空格符表示缩进
+set expandtab               "false
 set autoindent              "创建新行时，使用与上一行同样的缩进
 set termguicolors
 set smartindent
