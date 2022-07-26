@@ -51,6 +51,9 @@ call plug#end()
 map <C-z> <nop>
 map <C-f> <nop>
 map <C-c> <nop>
+map <C-z> <nop>
+map <C-y> <C-r>
+noremap <C-z> u
 noremap <C-c> :w !clip.exe<CR><CR>
 noremap <M-e> :FZF ~<CR>
 noremap fig :r !figlet 
@@ -303,20 +306,24 @@ let g:vim_current_word#enabled = 1
 let g:vim_current_word#highlight_delay = 300    "光标下单词高亮延迟
 
 "------------------------[ 配色 ]------------------------
+hi CurrentWord ctermbg=53 guifg=#d52753 guibg=#ead984   "模仿vscode
+hi CurrentWordTwins ctermbg=53 guifg=#d52753 guibg=#ead984
+
 "hi CurrentWord ctermbg=53 guifg=#d7000f guibg=#f0c2a2   "橙红撞色
 "hi CurrentWordTwins ctermbg=53 guifg=#d7000f guibg=#f0c2a2
 
-hi CurrentWord ctermbg=53 guifg=#faead3 guibg=#a27e7e   "酒红淡黄
-hi CurrentWordTwins ctermbg=53 guifg=#faead3 guibg=#a27e7e
+"hi CurrentWord ctermbg=53 guifg=#faead3 guibg=#a27e7e   "酒红淡黄
+"hi CurrentWordTwins ctermbg=53 guifg=#faead3 guibg=#a27e7e
 
 "hi CurrentWord ctermbg=53 guifg=#fac03d guibg=#697723   "黄绿撞色
 "hi CurrentWordTwins ctermbg=53 guifg=#fac03d guibg=#697723
 
 "hi CursorLine   cterm=NONE ctermbg=darkgray ctermfg=NONE guibg=NONE guifg=NONE
-"hi CursorLine   cterm=NONE ctermbg=darkgray
+hi CursorLine   guibg=#3d4455 guifg=NONE
 "hi Pmenu ctermfg=white ctermbg=darkgray cterm=NONE guifg=dark guibg=darkgrey gui=NONE 
 "hi PmenuSel ctermfg=NONE ctermbg=31 cterm=NONE guifg=dark guibg=#FFB6C1 gui=NONE
 hi visual term=reverse cterm=bold ctermfg=NONE ctermbg=darkblue
+let g:sonokai_lightline_disable_bold=1
 "--------------------------------------------------------
 
 autocmd BufAdd NERD_tree_*,yset termguicolorsour_buffer_name.rb,*.js :let b:vim_current_word_disabled_in_this_buffer = 1 "防止在多个缓冲区运行
