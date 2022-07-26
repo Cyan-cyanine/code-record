@@ -8,7 +8,8 @@ alias gco='git checkout'
 alias gremote='git remote'
 alias gbr='git branch'
 alias vim='nvim'
-alias copy='cp ~/.config/nvim/init.vim ~/gitRep/Code/etc/init.vim;cp ~/.config/ranger ~/gitRep/Code/etc/ranger -r;cp ~/.config/nvim/coc-settings.json ~/gitRep/Code/etc/coc-settings.json'
+alias copy_to_remote='cp ~/.config/nvim/init.vim ~/gitRep/Code/etc/init.vim;cp ~/.config/ranger ~/gitRep/Code/etc/ -r;cp ~/.config/nvim/coc-settings.json ~/gitRep/Code/etc/coc-settings.json'
+alias copy_to_local='cp ~/gitRep/Code/etc/init.vim ~/.config/nvim/init.vim;cp ~/gitRep/Code/etc/ranger ~/.config/ -r;cp ~/gitRep/Code/etc/coc-settings.json ~/.config/nvim/coc-settings.json'
 
 set -g -x RANGER_LOAD_DEFAULT_RC FALSE
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'

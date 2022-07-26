@@ -50,6 +50,8 @@ call plug#end()
 "                |_|    
 map <C-z> <nop>
 map <C-f> <nop>
+map <C-c> <nop>
+noremap <C-c> :w !clip.exe<CR><CR>
 noremap <M-e> :FZF ~<CR>
 noremap fig :r !figlet 
 noremap <C-f> :Ag<CR>
