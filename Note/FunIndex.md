@@ -9,14 +9,15 @@
     - [4.2. 标准IO](#42-标准io)
     - [4.3. 文件控制](#43-文件控制)
     - [4.4. 目录IO](#44-目录io)
-    - [4.5. 进程](#45-进程)
-    - [4.6. IPC进程通讯](#46-ipc进程通讯)
-        - [4.6.1. 管道](#461-管道)
-            - [4.6.1.1. 信号](#4611-信号)
-        - [4.6.2. 消息队列](#462-消息队列)
-        - [4.6.3. 共享内存](#463-共享内存)
-        - [4.6.4. 信号量](#464-信号量)
-    - [4.7. 线程](#47-线程)
+    - [4.5. 时间操作](#45-时间操作)
+    - [4.6. 进程](#46-进程)
+    - [4.7. IPC进程通讯](#47-ipc进程通讯)
+        - [4.7.1. 管道](#471-管道)
+            - [4.7.1.1. 信号](#4711-信号)
+        - [4.7.2. 消息队列](#472-消息队列)
+        - [4.7.3. 共享内存](#473-共享内存)
+        - [4.7.4. 信号量](#474-信号量)
+    - [4.8. 线程](#48-线程)
 - [5. C网络编程](#5-c网络编程)
 
 <a id="C_base"></a>
@@ -90,9 +91,25 @@
 | man 3 readdir                 | <a href="#readdir">readdir</a>   | 读取目录             | [自定义ls命令](../Code/03_SystemPrograming/02_dirIo/customized_ls.c)<BR>[自定义ls -R命令](../Code/03_SystemPrograming/02_dirIo/customized_ls_-R.c) |
 | man 2 getcwd                  | <a href="#getcwd">getcwd</a>     | 获取当前工作目录     |                                                                         _                                                                          |
 | man 2 chdir                   | <a href="#chdir">chdir</a>       | 修改当前进程工作目录 |                                                                         _                                                                          |
+| man 2 mkdir                   | <a href="#mkdir">mkdir</a>       | 创建目录文件         |                                                                         _                                                                          |
+| man 2 rmdir                   | <a href="#rmdir">rmdir</a>       | 删除目录文件         |                                                                         _                                                                          |
+
+<a id="timeOp">时间操作</a>
+## 4.5. 时间操作
+| <a href="#top">[返回目录]</a> |  跳转     |功能描述 | 代码示例 |
+| :---------- | :----------------: | :--: | - |
+| man time_t      |  <a href="#time_t">time_t</a> |时间数据类型    | - |
+| man 2 time       |  <a href="#time">time</a> |返回时间数(time_t)    | [字符串时间转整数](../Code/03_SystemPrograming/08_timeOp/strtotime.c) |
+| -       |  <a href="#struct_tm">struct_tm</a> |时间结构体    | [整数时间转字符串](../Code/03_SystemPrograming/08_timeOp/timetostr.c) |
+| man 3 localtime       |  <a href="#localtime">localtime</a> |把time_t表示的时间转换为struct tm表示的时间    | [localtime.c](../Code/03_SystemPrograming/08_timeOp/localtime.c)|
+| man 3 mktime       |  <a href="#mktime">mktime</a> |把struct tm表示的时间转换为time_t表示的时间    | [mktime.c](../Code/03_SystemPrograming/08_timeOp/mktime.c) |
+| man timeval       |  <a href="#struct_timeval">struct_timeval</a> |精确到微秒的timeval结构体    | - |
+| man timezone       |  <a href="#struct_timezone">struct_timezone</a> |时区timezone 结构体    | - |
+| man 3 gettimeofday       |  <a href="#gettimeofday">gettimeofday</a> |获得当前的秒和微秒的时间    | [gettimeofday.c](../Code/03_SystemPrograming/08_timeOp/gettimeofday.c) |
+| man d       |  <a href="#d">d</a> |d    | - |
 
 <a id="process"></a>
-## 4.5. 进程
+## 4.6. 进程
 | <a href="#top">[返回目录]</a> |            函数详解            |                         功能描述                         |                                    代码示例                                    |
 | :---------------------------- | :----------------------------: | :------------------------------------------------------: | :----------------------------------------------------------------------------: |
 | man 2 fork                    |    <a href="#fork">fork</a>    |                        创建子进程                        |         [进程扇](../Code/03_SystemPrograming/05_process/process_fan.c)         |
@@ -101,16 +118,16 @@
 | man 2 wait                    |    <a href="#wait">wait</a>    |                      等待子进程退出                      |                                       -                                        |
 
 <a id="ipc"></a>
-## 4.6. IPC进程通讯
+## 4.7. IPC进程通讯
 <a id="ipc_pipe"></a>
-### 4.6.1. 管道
+### 4.7.1. 管道
 | <a href="#top">[返回目录]</a> |           函数详解           |   功能描述   |                                                                     代码示例                                                                     |
 | :---------------------------- | :--------------------------: | :----------: | :----------------------------------------------------------------------------------------------------------------------------------------------: |
 | man 2 pipe                    |   <a href="#pipe">pipe</a>   | 创建无名管道 | [亲子进程管道通讯](../Code/03_SystemPrograming/06_ipc/1_pipe/pipe.c)<BR>[兄弟进程管道通讯](../Code/03_SystemPrograming/06_ipc/1_pipe/pipe_bro.c) |
 | man 3 mkfifo                  | <a href="#mkfifo">mkfifo</a> | 创建有名管道 |     [有名管道读端](../Code/03_SystemPrograming/06_ipc/1_pipe/fifo_r.c)<BR>[有名管道写端](../Code/03_SystemPrograming/06_ipc/1_pipe/fifo_w.c)     |
 
 <a id="ipc_signal"></a>
-####  4.6.1.1. 信号
+####  4.7.1.1. 信号
 
 | <a href="#top">[返回目录]</a> |                 函数详解                  |                              功能描述                              |                                                                                   代码示例                                                                                   |
 | :---------------------------- | :---------------------------------------: | :----------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
@@ -131,7 +148,7 @@
 | man 2 getpgid/setpgid         |  <a href="#getpgid">getpgid/setpgid</a>   |                         获取/设置进程组ID                          |                                                                                      -                                                                                       |
 
 <a id="ipc_msg"></a>
-### 4.6.2. 消息队列
+### 4.7.2. 消息队列
 | <a href="#top">[返回目录]</a> |              函数详解               |            功能描述            | 代码示例                                                                                                                                     |
 | :---------------------------- | :---------------------------------: | :----------------------------: | -------------------------------------------------------------------------------------------------------------------------------------------- |
 | man 3 ftok                    |      <a href="#ftok">ftok</a>       |   获取一个当前未用的IPC的key   | -                                                                                                                                            |
@@ -139,7 +156,7 @@
 | man 2 msgsnd/msgrcv           | <a href="#msgsnd">msgsnd/msgrcv</a> |         发送、接收消息         | [[消息队列写端]](../Code/03_SystemPrograming/06_ipc/4_msgq/msgsnd.c)<BR>[[消息队列读端]](../Code/03_SystemPrograming/06_ipc/4_msgq/msgrcv.c) |
 | man 2 msgctl                  |    <a href="#msgctl">msgctl</a>     | 设置或者获取消息队列的相关属性 | -                                                                                                                                            |
 <a id="ipc_shm"></a>
-### 4.6.3. 共享内存
+### 4.7.3. 共享内存
 | <a href="#top">[返回目录]</a> |           函数详解           |             功能描述             | 代码示例                                                                                                                                   |
 | :---------------------------- | :--------------------------: | :------------------------------: | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | man 3 ftok                    |   <a href="#ftok">ftok</a>   |    获取一个当前未用的IPC的key    | -                                                                                                                                          |
@@ -147,7 +164,7 @@
 | man 2 shmat                   |  <a href="#shmat">shmat</a>  | 对共享内存进行映射，或者解除映射 | -                                                                                                                                          |
 | man 2 shmctl                  | <a href="#shmctl">shmctl</a> |  获取或者设置共享内存的相关属性  | -                                                                                                                                          |
 <a id="ipc_semaphore"></a>
-### 4.6.4. 信号量
+### 4.7.4. 信号量
 | <a href="#top">[返回目录]</a> |              函数详解              |             功能描述              | 代码示例                                                                                                                                               |
 | :---------------------------- | :--------------------------------: | :-------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **系统V信号量**               |     <a id="ipc_sem_SysV">-</a>     |                 -                 | -                                                                                                                                                      |
@@ -163,7 +180,7 @@
 | man 2 sem_wait/sem_post       |  <a href="#sem_wait">sem_wait</a>  |   对POSIX无名信号量进行P、V操作   | -                                                                                                                                                      |
 
 <a id="thread"></a>
-## 4.7. 线程
+## 4.8. 线程
 
 | <a href="#top">[返回目录]</a>      |                              函数详解                              |                   功能描述                   |                                       代码示例                                        |
 | :--------------------------------- | :----------------------------------------------------------------: | :------------------------------------------: | :-----------------------------------------------------------------------------------: |
@@ -189,26 +206,26 @@
 
 <a id="network"></a>
 # 5. C网络编程
-| <a href="#top">[返回目录]</a> |                      函数详解                      |                  功能描述                   |                                             代码示例                                              |
-| :---------------------------- | :------------------------------------------------: | :-----------------------------------------: | :-----------------------------------------------------------------------------------------------: |
-| man 3 inet_pton               |         <a href="#inet_pton">inet_pton</a>         |           点分式ip转网络字节序ip            |                                                 -                                                 |
-| man inet_pton                 |         <a href="#inet_pton">inet_ntop</a>         |           网络字节序ip转点分式ip            |                                                 -                                                 |
-| man 7 ip                      | <a href="#struct_sockaddr">struct_sockaddr ***</a> |               地址信息结构体                |                                                 -                                                 |
-| man 2 socket                  |            <a href="#socket">socket</a>            |                创建通讯端点                 |                                                 -                                                 |
-| man 2 getsockname                  |            <a href="#getsockname">getsockname</a>            |                获取某套接字上的网络地址信息和地址所占字节长度                 |                                                 [getsockname.c](../Code/04_network/tcp/getsockname.c)                                                 |
-| man 2 getsockname                  |            <a href="#getpeername">getpeername</a>            |                获取指与指定套接字相连接的对端网络信息                 |                                                 -                                                |
-| man 2 bind                    |              <a href="#bind">bind</a>              |    在套接字上绑定IP、端口号、协议簇信息     |                                                 -                                                 |
-| man 2 listen                  |            <a href="#listen">listen</a>            |                设置监听上限                 |                                                 -                                                 |
-| man 2 accept                  |            <a href="#accept">accept</a>            |       建立与用户的连接，接收其套接字        |                       [tcp接收端(server)](../Code/04_network/tcp/server.c)                        |
-| man 2 connect                 |           <a href="#connect">connect</a>           |             在套接字上启动连接              |                       [tcp发送端(client)](../Code/04_network/tcp/client.c)                        |
-| man 2 sendto                  |            <a href="#sendto">sendto</a>            |   向某网络主机地址发送信息(常用于udp协议)   |  [udp发送端](../Code/04_network/udp/snd.c)<BR>[接收组播](../Code/04_network/udp/rcv_multicast.c)  |
-| man 2 recvfrom                |              <a href="#">recvfrom</a>              | 接收来自某网络主机地址的信息(常用于udp协议) |  [udp接收端](../Code/04_network/udp/rcv.c)<BR>[发送组播](../Code/04_network/udp/snd_multicast.c)  |
-| man 3 setsocketopt            |      <a href="#setsocketopt">setsocketopt</a>      |               设置套接字选项                | [端口复用](../Code/04_network/tcp/server.c)<BR>[发送广播](../Code/04_network/udp/snd_broadcast.c) |
-| man 2 shutdown                |          <a href="#shutdown">shutdown</a>          |             关闭部分全双工连接              |                                                 -                                                 |
-| man 2 select                  |            <a href="#select">select</a>            |     监视文件描述符集的读、写、异常事件      |                                                 -                                                 |
-| man 2 FD_ZERO                 |     <a href="#select_opt">select监听集操作</a>     |         操作select文件描述符集的宏          |                                                 -                                                 |
-| man d                         |                 <a href="#d">d</a>                 |                      d                      |                                                 -                                                 |
-| man d                         |                 <a href="#d">d</a>                 |                      d                      |                                                 -                                                 |
+| <a href="#top">[返回目录]</a> |                      函数详解                      |                    功能描述                    |                                             代码示例                                              |
+| :---------------------------- | :------------------------------------------------: | :--------------------------------------------: | :-----------------------------------------------------------------------------------------------: |
+| man 3 inet_pton               |         <a href="#inet_pton">inet_pton</a>         |             点分式ip转网络字节序ip             |                                                 -                                                 |
+| man inet_pton                 |         <a href="#inet_pton">inet_ntop</a>         |             网络字节序ip转点分式ip             |                                                 -                                                 |
+| man 7 ip                      | <a href="#struct_sockaddr">struct_sockaddr ***</a> |                 地址信息结构体                 |                                                 -                                                 |
+| man 2 socket                  |            <a href="#socket">socket</a>            |                  创建通讯端点                  |                                                 -                                                 |
+| man 2 getsockname             |       <a href="#getsockname">getsockname</a>       | 获取某套接字上的网络地址信息和地址所占字节长度 |                       [getsockname.c](../Code/04_network/tcp/getsockname.c)                       |
+| man 2 getsockname             |       <a href="#getpeername">getpeername</a>       |     获取指与指定套接字相连接的对端网络信息     |                                                 -                                                 |
+| man 2 bind                    |              <a href="#bind">bind</a>              |      在套接字上绑定IP、端口号、协议簇信息      |                                                 -                                                 |
+| man 2 listen                  |            <a href="#listen">listen</a>            |                  设置监听上限                  |                                                 -                                                 |
+| man 2 accept                  |            <a href="#accept">accept</a>            |         建立与用户的连接，接收其套接字         |                       [tcp接收端(server)](../Code/04_network/tcp/server.c)                        |
+| man 2 connect                 |           <a href="#connect">connect</a>           |               在套接字上启动连接               |                       [tcp发送端(client)](../Code/04_network/tcp/client.c)                        |
+| man 2 sendto                  |            <a href="#sendto">sendto</a>            |    向某网络主机地址发送信息(常用于udp协议)     |  [udp发送端](../Code/04_network/udp/snd.c)<BR>[接收组播](../Code/04_network/udp/rcv_multicast.c)  |
+| man 2 recvfrom                |              <a href="#">recvfrom</a>              |  接收来自某网络主机地址的信息(常用于udp协议)   |  [udp接收端](../Code/04_network/udp/rcv.c)<BR>[发送组播](../Code/04_network/udp/snd_multicast.c)  |
+| man 3 setsocketopt            |      <a href="#setsocketopt">setsocketopt</a>      |                 设置套接字选项                 | [端口复用](../Code/04_network/tcp/server.c)<BR>[发送广播](../Code/04_network/udp/snd_broadcast.c) |
+| man 2 shutdown                |          <a href="#shutdown">shutdown</a>          |               关闭部分全双工连接               |                                                 -                                                 |
+| man 2 select                  |            <a href="#select">select</a>            |       监视文件描述符集的读、写、异常事件       |                                                 -                                                 |
+| man 2 FD_ZERO                 |     <a href="#select_opt">select监听集操作</a>     |           操作select文件描述符集的宏           |                                                 -                                                 |
+| man d                         |                 <a href="#d">d</a>                 |                       d                        |                                                 -                                                 |
+| man d                         |                 <a href="#d">d</a>                 |                       d                        |                                                 -                                                 |
 
 <a id="open"></a>
 | <a href="#systemIo">open</a> |
@@ -355,6 +372,56 @@
 | <a href="#dirIo">chdir</a> |
 | :------------------------: |
 |   ![](./asset/chdir.png)   |
+
+<a id="mkdir"></a>
+| <a href="#dirIo">mkdir</a> |
+| :------------------------: |
+|        ![](./pic/d)        |
+
+<a id="rmdir"></a>
+| <a href="#dirIo">rmdir</a> |
+| :------------------------: |
+|        ![](./pic/d)        |
+
+<a id="time_t"></a>
+| <a href="#timeOp">time_t</a>|
+| :----------: |
+| ![](./asset/time_t.png) |
+
+<a id="time"></a>
+| <a href="#timeOp">time</a>|
+| :----------: |
+| ![](./asset/time.png) |
+
+<a id="struct_tm"></a>
+| <a href="#timeOp">struct tm</a>|
+| :----------: |
+| ![](./asset/struct_tm.png) |
+
+<a id="localtime"></a>
+| <a href="#timeOp">localtime</a>|
+| :----------: |
+| ![](./asset/localtime.png) |
+
+<a id="mktime"></a>
+| <a href="#timeOp">mktime</a>|
+| :----------: |
+| ![](./asset/mktime.png) |
+
+<a id="struct_timeval"></a>
+| <a href="#timeOp">struct timeval</a>|
+| :----------: |
+| ![](./asset/struct_timeval.png) |
+
+<a id="struct_timezone"></a>
+| <a href="#timeOp">struct timezone</a>|
+| :----------: |
+| ![](./asset/struct_timezone.png) |
+
+<a id="gettimeofday"></a>
+| <a href="#timeOp">gettimeofday</a>|
+| :----------: |
+| ![](./asset/gettimeofday.png) |
 
 <a id="truncate"></a>
 | <a href="#fileControl">truncate</a> |

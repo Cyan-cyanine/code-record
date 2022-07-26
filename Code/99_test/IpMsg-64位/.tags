@@ -118,7 +118,7 @@ cancelled	coms.h	/^  int    cancelled;$/;"	m	struct:gsNode	typeref:typename:int
 ceaseSend	send_receive.c	/^int ceaseSend(void)$/;"	f	typeref:typename:int
 cgch	Makefile	/^cgch:$/;"	t
 clean	Makefile	/^clean:$/;"	t
-cleaner	main.c	/^void* cleaner(void *option)$/;"	f	typeref:typename:void *
+cleaner	main.c	/^void* cleaner( void* option ) {$/;"	f	typeref:typename:void *
 code_convert	encode.c	/^int code_convert(char *to_charset, char *from_charset,$/;"	f	typeref:typename:int
 comHead	coms.h	/^  command comHead;$/;"	m	struct:msgList	typeref:typename:command
 comTail	coms.h	/^  command *comTail;$/;"	m	struct:msgList	typeref:typename:command *
@@ -131,7 +131,7 @@ deGsNode	coms.c	/^void deGsNode(gsNode *gs) \/\/delete fileList & tragetDir$/;"	
 delColon	utils.c	/^void delColon(char* dest, int size) \/\/:: ---> :$/;"	f	typeref:typename:void
 delUser	users.c	/^int delUser(user *uList, command *peercom)$/;"	f	typeref:typename:int
 destroyUsers	users.c	/^void destroyUsers(user *uList)$/;"	f	typeref:typename:void
-destroyer	main.c	/^void destroyer()$/;"	f	typeref:typename:void
+destroyer	main.c	/^void destroyer() {$/;"	f	typeref:typename:void
 encode.o	Makefile	/^encode.o: encode.c$/;"	t
 exit	users.h	/^  int    exit;$/;"	m	struct:user	typeref:typename:int
 fileList	coms.h	/^  filenode *   fileList;$/;"	m	struct:command	typeref:typename:filenode *
@@ -157,10 +157,10 @@ host	users.h	/^  char   host[NAMELEN];$/;"	m	struct:user	typeref:typename:char[]
 inUse	users.h	/^  int    inUse;$/;"	m	struct:user	typeref:typename:int
 initCommand	coms.c	/^void initCommand(command *com, unsigned int flag)$/;"	f	typeref:typename:void
 initGsNode	coms.c	/^void initGsNode(gsNode *gs)$/;"	f	typeref:typename:void
-initSvr	main.c	/^int initSvr(void)$/;"	f	typeref:typename:int
+initSvr	main.c	/^int initSvr( void ) {$/;"	f	typeref:typename:int
 inputNo	utils.c	/^int inputNo(int min, int max, int def, char *prom)$/;"	f	typeref:typename:int
 insertUser	users.c	/^int insertUser(user *uList, user *target)$/;"	f	typeref:typename:int
-interacter	main.c	/^void* interacter(void* option)$/;"	f	typeref:typename:void *
+interacter	main.c	/^void* interacter( void* option ) {$/;"	f	typeref:typename:void *
 ipmsg	Makefile	/^ipmsg: $(objects)$/;"	t
 listGFiles	send_receive.c	/^int listGFiles(gsNode **list, gsNode *gs, int size)$/;"	f	typeref:typename:int
 listSFiles	send_receive.c	/^int listSFiles(gsNode **list, gsNode *gs, int size)$/;"	f	typeref:typename:int
@@ -168,7 +168,7 @@ listUsers	users.c	/^int listUsers(user **pusers, user *uList, int size, int flag
 login	send_receive.c	/^int login(void)$/;"	f	typeref:typename:int
 logout	send_receive.c	/^int logout(void)$/;"	f	typeref:typename:int
 mList	coms.c	/^msgList mList;$/;"	v	typeref:typename:msgList
-main	main.c	/^int main (int argc, char *argv [])$/;"	f	typeref:typename:int
+main	main.c	/^int main( int argc, char* argv[] ) {$/;"	f	typeref:typename:int
 main.o	Makefile	/^main.o: main.c coms.h users.h ipmsg.h send_receive.h$/;"	t
 module dejitter delta	ts.conf	/^module dejitter delta=100$/;"	k
 module pthres pmin	ts.conf	/^module pthres pmin=1$/;"	k
@@ -194,12 +194,12 @@ parseHeader	send_receive.c	/^int parseHeader(filenode *pfn, char * recvs)$/;"	f	
 peer	coms.h	/^  struct sockaddr_in peer;$/;"	m	struct:command	typeref:struct:sockaddr_in
 peer	coms.h	/^  struct sockaddr_in peer;$/;"	m	struct:gsNode	typeref:struct:sockaddr_in
 peer	users.h	/^  struct sockaddr_in peer;$/;"	m	struct:user	typeref:struct:sockaddr_in
-processor	main.c	/^void* processor(void *option)$/;"	f	typeref:typename:void *
+processor	main.c	/^void* processor( void* option ) {$/;"	f	typeref:typename:void *
 pwd	coms.c	/^struct passwd* pwd; $/;"	v	typeref:struct:passwd *
 readDelimiter	utils.c	/^ssize_t readDelimiter(int fd, void *buf, ssize_t count, char ch)$/;"	f	typeref:typename:ssize_t
 readline	utils.c	/^ssize_t readline(int fd, void *buf, int size)$/;"	f	typeref:typename:ssize_t
 readn	utils.c	/^ssize_t readn(int fd, void *buf, size_t count)$/;"	f	typeref:typename:ssize_t
-receiver	main.c	/^void* receiver(void *option)$/;"	f	typeref:typename:void *
+receiver	main.c	/^void* receiver( void* option ) {$/;"	f	typeref:typename:void *
 recvFiles	send_receive.c	/^int recvFiles()$/;"	f	typeref:typename:int
 saySth	send_receive.c	/^int saySth(void)$/;"	f	typeref:typename:int
 selectFiles	send_receive.c	/^int selectFiles(void)$/;"	f	typeref:typename:int
